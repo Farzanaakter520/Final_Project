@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Patient } from '../app.component';
 
 @Component({
   selector: 'app-patient-information',
@@ -6,6 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './patient-information.component.html',
   styleUrl: './patient-information.component.css'
 })
-export class PatientInformationComponent {
-
+export class PatientInformationComponent  {
+  
 }
