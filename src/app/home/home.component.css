@@ -1,0 +1,42 @@
+.carousel-caption h1 {
+    color: #3e33a7; /* Change heading color */
+    font-weight: bold;
+    text-align:left;
+    font: size 40px;
+  }
+.carousel-caption h5 {
+    color: #17161f; /* Change heading color */
+    font-weight: bold;
+    text-align:left;
+    font-size: xx-large;
+  }
+  
+  .carousel-caption h4 {
+    color: #3e31b6; /* Change heading color */
+    font-weight: bold;
+    text-align:left;
+    font: size 40px;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-caption p {
+    color: #090a0a; /* Change paragraph text color */
+    text-align: left;
+  }
+
+  .carousel-item img {
+    height: 570px; /* Adjust the height as needed */
+    object-fit:fill; /* Ensures the image covers the area without distortion */
+  }
+  
+  .carousel-caption {
+    
+    top: 50%; /* Moves the text upwards */
+    left: 50%; /* Aligns text to the left */
+    text-align: left; /* Ensures left alignment */
+    transform: translate(-130%, -100%); /* Moves the text to the center */
+    
+   
+  }
+  
+  

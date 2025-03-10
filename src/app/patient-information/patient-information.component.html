@@ -1,59 +1,55 @@
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Patient Information</h3>
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" (click)="addPatient()">
-              <i class="fa fa-plus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" (click)="editPatient()">
-              <i class="fa fa-edit"></i>
-            </button>
-            <button type="button" class="btn btn-tool" (click)="deletePatient()">
-              <i class="fa fa-trash"></i>
-            </button>
-          </div>
-        </div>
-
-          <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-hover">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Age</th>
-                  <th>Gender</th>
-                  <th>Address</th>
-                  <th>Contact</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let patient of patientList">
-                  <td>{{patient.name}}</td>
-                  <td>{{patient.age}}</td>
-                  <td>{{patient.gender}}</td>
-                  <td>{{patient.address}}</td>
-                  <td>{{patient.contact}}</td>
-                  <td>
-                    <button type="button" class="btn btn-info btn-sm" (click)="editPatient(patient)">
-                      <i class="fa fa-edit"></i>
-                    </button>
-                    <button type="button" class="btn btn-danger btn-sm" (click)="deletePatient(patient)">
-                      <i class="fa fa-trash"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+<div class="container">
+  <h1 style="text-align: center;background-color: rgb(201, 211, 238);">Patient Registration</h1>
+  
+<form (ngSubmit)= "onSubmit()">
+  <fieldset>
+  <div class="mb-3">
+      <label for="patient_name">Patient Name:</label><br>
+      <input type="text" class="form-control" id="patient_name" name="patient_name" [(ngModel)]="patients.name" placeholder="Patient Name">
+  </div>
+ <div class="mb-3">
+      <label for="age">Age :</label><br>
+      <input type="number"  class="form-control" id="age" name="age" [(ngModel)]="patients.age" placeholder="Age">
+  </div>
+  <div class="mb-3">
+    <label for="gender">Gender:</label><br>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" id="male" name="gender" [(ngModel)]="patients.gender" value="Male"/>
+      <label class="form-check-label" for="male">Male</label>
     </div>
-  </div>     
 
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input"id="female" name="gender"[(ngModel)]="patients.gender"value="Female"/>
+      <label class="form-check-label" for="female">Female</label>
+    </div>
+  </div>
+  
+  <div class="mb-3">
+      <label for="blood_group">Blood Group:</label><br>
+      <input type="text" class="form-control" id="blood_group" name="blood_group" [(ngModel)]="patients.bloodGroup" placeholder="Blood Group">
 
+  </div>
+  <div class="mb-3">
+      <label for="address">Address:</label><br>
+      <input type="text" class="form-control" id="address" name="address" [(ngModel)]="patients.address" placeholder="Address">
 
-  -->
+  </div>
+  <div class="mb-3">
+      <label for="phone">Phone:</label><br>
+      <input type="string" class="form-control" id="phone" name="phone" [(ngModel)]="patients.phone" placeholder="Phone">
+
+  </div>
+  <div class="mb-3">
+      <label for="email">Email:</label><br>
+      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="patients.email" placeholder="Email">
+
+  </div>
+  <div class="mb-3">
+    <label for="date">Date :</label><br>
+    <input type="date" class="form-control" id="date" name="date"  [(ngModel)]="patients.date" placeholder="Date">
+</div>
+
+  <button type="submit" class="btn btn-primary">{{ isUpdate? 'Edit' : 'ADD' }}</button>
+</fieldset>
+</form>
+</div>

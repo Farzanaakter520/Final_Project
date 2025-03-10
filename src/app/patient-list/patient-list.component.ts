@@ -18,16 +18,16 @@ export class PatientListComponent implements OnInit {
     this.patients = JSON.parse(localStorage.getItem('patients') || '[]');
   }
 
-  editProducts(product: Patient) {
-    const id = product.id;
-    this.router.navigate(['/add', id], { state: { product}});
+  editProducts(patient: Patient) {
+    const id = patient.id;
+    this.router.navigate(['/add', id], { state: { patient}});
   }
   
 
-  deleteProduct(product: Patient) {
+  deleteProduct(patient: Patient) {
     //const id = product.id;
-    if (confirm('Are you sure you want to delete this product?')) {
-      this.patients = this.patients.filter((p) => p !== product);
+    if (confirm('Are you sure you want to delete this patient?')) {
+      this.patients = this.patients.filter((p) => p !== patient);
       localStorage.setItem('patients', JSON.stringify(this.patients));
     }
   }

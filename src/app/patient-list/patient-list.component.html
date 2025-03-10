@@ -1,15 +1,17 @@
 <div class="container">
-    <h1 style="text-align: center;background-color: rgb(201, 180, 235);">Patient List</h1>
+    <h1 style="text-align: center;background-color: rgb(163, 167, 219);">Patient List</h1>
 
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Name</th>
           <th>Age</th>
           <th>Gender</th>
+          <th>Blood Group</th>
           <th>Address</th>
           <th>Phone</th>
-          <th>Date of Birth</th>
+          <th>Email</th>
           <th>Date</th>
           <th>Action</th>
         </tr>
@@ -17,20 +19,18 @@
       <tbody>
         @for(patient of patients; track patient.id){
             <tr>
+              <td>{{patients.indexOf (patient) + 1}}</td>
               <td>{{patient.name}}</td>
               <td>{{patient.age}}</td>
               <td>{{patient.gender}}</td>
+              <td>{{patient.bloodGroup}}</td>
               <td>{{patient.address}}</td>
               <td>{{patient.phone}}</td>
-              <td>{{patient.dateOfBirth}}</td>
+              <td>{{patient.email}}</td>
               <td>{{patient.date}}</td>
               <td>
-                <button type="button" class="btn btn-info btn-sm" (click)="editPatient(patient)">
-                  <i class="fa fa-edit"></i>
-                </button>
-                <button type="button" class="btn btn-danger btn-sm" (click)="deletePatient(patient)">
-                  <i class="fa fa-trash"></i>
-                </button>
+                <button type="button" class="btn btn-success" (click)="editProducts(patient)">Edit</button>
+                        <button type="button" class="btn btn-warning" (click)="deleteProduct(patient)">Delete</button>
               </td>
             </tr>
         }

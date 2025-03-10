@@ -1,0 +1,47 @@
+<!-- <div *ngIf="showForm" class="mt-3">
+    <h3>Doctor Appointment</h3>
+    <form  [formGroup]="appointmentForm"(ngSubmit)="submitAppointment()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Appointment Date</label>
+        <input type="date" class="form-control" id="date" formControlName="date">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div> -->
+  
+
+  <div class="container">
+    <fieldset>
+    <h1 style="text-align: center;background-color: rgb(201, 211, 238);">{{ isEditMode ? "Edit Appointment" : "Add Appointment" }}</h1>
+    <form (ngSubmit)="saveAppointment()">
+      <label for="name">Name: </label><br />
+      <input type="text" class="form-control" name="name" [(ngModel)]="appointments.name" required /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="text" class="form-control" name="email" [(ngModel)]="appointments.email" required /><br />
+  
+     <label for="appointmentDate">Appointment Date: </label><br>
+     <input type="text" class="form-control" name="startDate" [(ngModel)]="appointments.appointmentDate" required /><br />
+
+     <label for="doctorId">Doctor Id: </label><br>
+     <input type="text" class="form-control" name="doctorId" [(ngModel)]="appointments.doctorId" required /><br />
+
+     <label for="patientId">Patient Id: </label><br>
+     <input type="text" class="form-control" name="patientId" [(ngModel)]="appointments.patientId" required /><br />
+
+
+      <button type="submit" class="btn btn-success">{{ isEditMode ? "Update" : "Add" }}</button>
+    </form>
+  </fieldset>
+  </div>
+
+  
+  
