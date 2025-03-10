@@ -25,11 +25,9 @@ export class AppointmentFormComponent implements OnInit {
   }
   } 
   ngOnInit(): void {
-    // Check if editing an existing course
     const state = history.state;
    if (state && state.appointment) {
       this.appointments = state.appointment;
-     //  this.isEditMode = true;
     }
   }
 
@@ -37,18 +35,15 @@ export class AppointmentFormComponent implements OnInit {
    const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
 
    if (this.isEditMode) {
-     // Update existing course
      const index = appointments.findIndex((p: Appointment) => p.id === this.appointments.id);
      if (index !== -1) {
        appointments[index] = this.appointments;
      }
    } else {
-     // Add new course
      this.appointments.id = appointments.length > 0 ? Math.max(...appointments.map((p: Appointment) => p.id)) + 1 : 1;
      appointments.push(this.appointments);
    }
 
-   // Save back to localStorage
    localStorage.setItem('appointments', JSON.stringify(appointments));
    this.router.navigate(['/appointment']);
  }

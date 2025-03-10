@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 style="text-align: center;background-color: rgb(163, 167, 219);">Appointment List</h1>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Appointment Date</th>
+          <th>Doctor Id</th>
+          <th>Patient Id</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(appointment of appointments; track appointment.id){
+            <tr>
+              <td>{{appointments.indexOf (appointment) + 1}}</td>
+              <td>{{appointment.name}}</td>
+              <td>{{appointment.email}}</td>
+              <td>{{appointment.appointmentDate}}</td>
+              <td>{{appointment.doctorId}}</td>
+              <td>{{appointment.patientId}}</td>
+              <td>
+                <button type="button" class="btn btn-success" (click)="editAppointment(appointment)">Edit</button>
+                        <button type="button" class="btn btn-warning" (click)="deleteAppointment(appointment)">Delete</button>
+              </td>
+            </tr>
+        }
+    </table>
+    <button  class=" btn btn-primary" (click)="addNewappointment()">Add Appointment</button>
+  </div>
+
