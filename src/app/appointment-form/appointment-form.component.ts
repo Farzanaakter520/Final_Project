@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppointmentFormComponent implements OnInit {
   
+  allAppointments: Appointment[] = [];
   appointments: Appointment = new Appointment(0,'','','',0,0);
   isEditMode: boolean = false;
   
@@ -29,6 +30,8 @@ export class AppointmentFormComponent implements OnInit {
    if (state && state.appointment) {
       this.appointments = state.appointment;
     }
+    let allAppointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+    this.allAppointments = allAppointments;
   }
 
   saveAppointment(): void {

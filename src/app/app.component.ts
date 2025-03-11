@@ -3,12 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { DoctorsComponent } from "./doctors/doctors.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from "./footer/footer.component";
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -57,3 +58,27 @@ export class AppComponent {
         this.patientId = patientId;
     }
   }
+
+  export class Student {
+    id: number;
+    name: string;
+    fatherName: string;
+    motherName: string;
+    address: string;
+    mobileNo: string;
+    email: string;
+    password: string;
+
+    constructor(id: number, name: string, fatherName: string, motherName: string, address: string, mobileNo: string, email: string, password: string) {
+        this.id = id;
+        this.name = name;
+        this.fatherName = fatherName;
+        this.motherName = motherName;
+        this.address = address;
+        this.mobileNo = mobileNo;
+        this.email = email;
+        this.password = password;
+    }
+  }
+
+  
