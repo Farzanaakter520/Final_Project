@@ -15,6 +15,7 @@ img{
 img{
     height: 100px;
     width: 100px;
+    left-spacing: 60px;
 }
 footer {
     background-color: #c7d5e6;
