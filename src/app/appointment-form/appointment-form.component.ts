@@ -48,6 +48,6 @@ export class AppointmentFormComponent implements OnInit {
    }
 
    localStorage.setItem('appointments', JSON.stringify(appointments));
-   this.router.navigate(['/appointment']);
+   this.router.navigate(['/appointmentList']);
  }
 }

@@ -20,7 +20,7 @@ export class PatientListComponent implements OnInit {
 
   editProducts(patient: Patient) {
     const id = patient.id;
-    this.router.navigate(['/add', id], { state: { patient}});
+    this.router.navigate(['/add'], { state: { patient}});
   }
   
 
@@ -30,6 +30,9 @@ export class PatientListComponent implements OnInit {
       this.patients = this.patients.filter((p) => p !== patient);
       localStorage.setItem('patients', JSON.stringify(this.patients));
     }
+  }
+  addNewPatient():void{
+    this.router.navigate(['/add'], { state: { patient: new Patient('','',0,'','','','','','')}});
   }
 
 }

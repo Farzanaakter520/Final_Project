@@ -23,8 +23,8 @@ export const routes: Routes = [
        {path:'departments', component: DepartmentComponent},
        {path:'doctors', component: DoctorsComponent},
        {path:'services', component: ServicesComponent},
-       {path:'appointment', component: AppointmentFormComponent},
-       {path:'addAppointment', component: AppointmentListComponent},
+       {path:'addAppointment', component: AppointmentFormComponent},
+       {path:'appointmentList', component: AppointmentListComponent},
        {path:'admin', component: AdminComponent},
        {path:'contact', component: ContactComponent},
        

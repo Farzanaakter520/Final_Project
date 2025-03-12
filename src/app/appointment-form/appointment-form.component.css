@@ -5,6 +5,7 @@
     background-repeat: no-repeat; /* Prevents repeating */
     padding: 20px; /* Adds some spacing inside the container */
     border-radius: 10px; /* Rounds the corners */
+    
   }
   
   h1 {
@@ -12,5 +13,6 @@
     padding: 10px;
     border-radius: 5px;
   }
+
   
   

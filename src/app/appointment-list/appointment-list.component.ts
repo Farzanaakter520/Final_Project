@@ -20,7 +20,7 @@ export class AppointmentListComponent implements OnInit {
     
     editAppointment(appointment: Appointment): void {
       const id = appointment.id;
-      this.router.navigate(['/add'], { state: { appointment } });
+      this.router.navigate(['addAppointment'], { state: { appointment } });
     }
   
     
@@ -31,6 +31,6 @@ export class AppointmentListComponent implements OnInit {
       }
     }
     addNewappointment(): void {
-      this.router.navigate(['/addappointment'], { state: { appointment: new Appointment(0,'','','',0,0) } });
+      this.router.navigate(['/addAppointment'], { state: { appointment: new Appointment(0,'','','',0,0) } });
     }
 }
