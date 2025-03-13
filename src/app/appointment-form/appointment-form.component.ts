@@ -48,6 +48,7 @@ export class AppointmentFormComponent implements OnInit {
    }
 
    localStorage.setItem('appointments', JSON.stringify(appointments));
-   this.router.navigate(['/appointmentList']);
- }
+   //this.router.navigate(['/appointmentList']);
+ alert('Appointment Saved Successfully');
+  }
 }

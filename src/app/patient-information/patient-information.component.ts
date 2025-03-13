@@ -57,6 +57,7 @@ export class PatientInformationComponent {
     this.patients = new Patient('','',0,'','','','','','');
 
     // Navigate back to the patient list page
-    this.router.navigate(['/list']);
+    //this.router.navigate(['/list']);
+    alert('Patient Information Saved Successfully');
   }
 }
