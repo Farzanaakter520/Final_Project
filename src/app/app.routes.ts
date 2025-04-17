@@ -11,6 +11,7 @@ import { AppointmentFormComponent } from './appointment-form/appointment-form.co
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
+import { PharmacyComponent } from './pharmacy/pharmacy.component';
 
 
 
@@ -27,6 +28,7 @@ export const routes: Routes = [
        {path:'appointmentList', component: AppointmentListComponent},
        {path:'admin', component: AdminComponent},
        {path:'contact', component: ContactComponent},
+       {path:'pharmacy', component: PharmacyComponent},
        
        
        

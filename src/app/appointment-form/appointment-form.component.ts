@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Appointment } from '../app.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-appointment-form',
-  imports: [FormsModule],
+  imports: [FormsModule, NavbarComponent],
   templateUrl: './appointment-form.component.html',
   styleUrl: './appointment-form.component.css'
 })

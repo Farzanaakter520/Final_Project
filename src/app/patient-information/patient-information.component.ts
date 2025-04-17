@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { Patient } from '../app.component';  // Ensure the import path is correct
 import { FormsModule } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 
 @Component({
   selector: 'app-patient-information',
-  imports: [FormsModule],
+  imports: [FormsModule, NavbarComponent],
   templateUrl: './patient-information.component.html',
   styleUrls: ['./patient-information.component.css']
 })
