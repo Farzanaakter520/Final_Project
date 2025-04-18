@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { LoginRegisterService } from '../services/login-register.service';
+import { NavbarComponent } from "../navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from "../navbar/navbar.component";
+import { LoginRegisterService } from '../services/login-register.service';
 
 @Component({
-  selector: 'app-login',
-  imports: [FormsModule, CommonModule, NavbarComponent],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-login-admin',
+  imports: [NavbarComponent, FormsModule, CommonModule],
+  templateUrl: './login-admin.component.html',
+  styleUrl: './login-admin.component.css'
 })
-export class LoginComponent {
-  email: string = "";
-  pass: string = "";
+export class LoginAdminComponent {
+email: string = "";
+pass: string = "";
 
   constructor(
     private loginRegisterService: LoginRegisterService
@@ -29,9 +29,9 @@ export class LoginComponent {
   }
 
   roles = [
-    { name: 'Admin', icon: 'fas fa-user-shield' },
-    { name: 'Doctor', icon: 'fas fa-chalkboard-Doctor' },
-    { name: 'Patient', icon: 'fas fa-user-graduate' }
+    { name: 'Patient', icon: 'fas fa-user-graduate', link: 'login/patients' },
+    { name: 'Doctor', icon: 'fas fa-chalkboard-Doctor', link: 'login/doctor' },
+    { name: 'Admin', icon: 'fas fa-user-shield', link: 'login/admin' }
   ];
 
   username = '';
@@ -47,4 +47,7 @@ export class LoginComponent {
     // Add actual login logic here
   }
 }
+
+
+
 

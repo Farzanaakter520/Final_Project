@@ -5,7 +5,7 @@ import { LoggedinUserService } from '../services/loggedin-user.service';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RegisterComponent, LoginComponent],
+  imports: [RegisterComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
