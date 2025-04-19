@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from "../navbar/navbar.component";
 import { LoginRegisterService } from '../services/login-register.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
-  selector: 'app-login',
-  imports: [FormsModule, CommonModule, NavbarComponent],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-login-patients',
+  imports: [NavbarComponent, FormsModule, CommonModule],
+  templateUrl: './login-patients.component.html',
+  styleUrl: './login-patients.component.css'
 })
-export class LoginComponent {
-  email: string = "";
+export class LoginPatientsComponent {
+email: string = "";
   pass: string = "";
 
   constructor(
@@ -21,7 +21,7 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginRegisterService.login(this.email,this.pass)) {
       alert('Login successful!');
-      window.location.href="/admin";
+      window.location.href="/Patients";
 
     } else {
       alert('Login Failed! Try again...');
@@ -29,9 +29,9 @@ export class LoginComponent {
   }
 
   roles = [
-    { name: 'Admin', icon: 'fas fa-user-shield' },
-    { name: 'Doctor', icon: 'fas fa-chalkboard-Doctor' },
-    { name: 'Patient', icon: 'fas fa-user-graduate' }
+    { name: 'Patient', icon: 'fas fa-user-graduate', link: 'login/patients' },
+    { name: 'Doctor', icon: 'fas fa-chalkboard-Doctor', link: 'login/doctor' },
+    { name: 'Admin', icon: 'fas fa-user-shield', link: 'login/admin' }
   ];
 
   username = '';
@@ -47,4 +47,5 @@ export class LoginComponent {
     // Add actual login logic here
   }
 }
+
 

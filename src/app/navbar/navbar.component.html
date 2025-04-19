@@ -39,15 +39,15 @@
           </li> -->
 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/contact">Contact</a>
+            <a class="nav-link active" href="http://localhost:4200/contact">Contact</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/pharmacy">Pharmacy</a>
+            <a class="nav-link active" href="http://localhost:4200/pharmacy">Pharmacy</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/admin">Admin</a>
+            <a class="nav-link active" href="http://localhost:4200/admin">Admin</a>
           </li>
 
          
@@ -65,13 +65,15 @@
         
           @if (!isUserLoggedIn) {
           <div class="d-inline p-2">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Registration
-          </button>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Registration
+            </button> -->
         </div>
         <div class="d-inline p-2">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+          <a href="login/patients">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"
             data-bs-whatever="@mdo">Login</button>
+            </a>
           </div>
         } @else {
           <h5>
@@ -96,5 +98,6 @@
 
 
 <!-- For login button (login) -->
-<app-login></app-login>
+  <!-- use it where it's needed -->
+<!-- <app-login></app-login>  -->
 
