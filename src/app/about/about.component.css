@@ -57,7 +57,6 @@ p {
 
 body {
     font-family: 'Poppins', sans-serif;
-    /*background: url('c:\Users\ft\Downloads\Image 2025-03-07 at 11.18.19 AM.jpeg') no-repeat center center/cover;*/
     margin: 0;
     padding: 0;
     display: flex;
@@ -68,16 +67,16 @@ body {
 }
 
 
-.container {
+ .container {
     max-width: 800px;
-    background: rgba(217, 205, 224, 0.9); 
+     background: rgba(217, 205, 224, 0.9);  
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
+} 
 
 
-.form-signin {
+ .form-signin {
     text-align: center;
 }
 
@@ -95,9 +94,9 @@ h1 {
 
 
 p {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.8;
-    color: #333;
+    color: #1c1d1ff3;
     text-align: justify;
 }
 
@@ -109,3 +108,23 @@ p {
     }
 }
 
+/*.a{
+    background-image: url('https://www.shutterstock.com/image-vector/world-health-day-global-awareness-260nw-2433720935.jpg');
+} 
+
+
+.a {
+    background-image: url('https://image.shutterstock.com/image-vector/world-health-day-global-awareness-260nw-2433720935.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #f8f9faf3;
+    text-align: justify;
+}*/
