@@ -21,6 +21,7 @@ import { PrescriptionMedicinesComponent } from './prescription-medicines/prescri
 
 
 
+
 export const routes: Routes = [
        {path: '', redirectTo: 'home', pathMatch: 'full'},
        {path:'add', component: PatientInformationComponent},
@@ -42,6 +43,7 @@ export const routes: Routes = [
        {path:'register', component: RegisterComponent},
        {path:'medicine', component: PharmacyComponent},
        {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
+       
 
        {path:'**', redirectTo: 'home', pathMatch: 'full'}
 ];
