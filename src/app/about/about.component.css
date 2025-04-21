@@ -63,7 +63,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(224, 199, 168);
+    background-color: rgb(247, 246, 246);
 }
 
 
@@ -124,6 +124,8 @@ h1 {
 h1::after {
     content: '';
     position: absolute;  
+    content: '';  
+    position: absolute;
     top: 0;
     left: -75%;
     width: 50%;

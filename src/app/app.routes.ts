@@ -18,6 +18,7 @@ import { LoginPatientsComponent } from './login-patients/login-patients.componen
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { RegisterComponent } from './register/register.component';
 import { PrescriptionMedicinesComponent } from './prescription-medicines/prescription-medicines.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 
 
 
@@ -43,7 +44,7 @@ export const routes: Routes = [
        {path:'register', component: RegisterComponent},
        {path:'medicine', component: PharmacyComponent},
        {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
-       
+       {path:'addDoctor', component: AddDoctorComponent},
 
        {path:'**', redirectTo: 'home', pathMatch: 'full'}
 ];
