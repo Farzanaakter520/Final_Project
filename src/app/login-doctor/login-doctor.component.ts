@@ -21,7 +21,7 @@ email: string = "";
   onSubmit() {
     if (this.loginRegisterService.login(this.email,this.pass)) {
       alert('Login successful!');
-      window.location.href="/admin";
+      window.location.href="/doctor";
 
     } else {
       alert('Login Failed! Try again...');

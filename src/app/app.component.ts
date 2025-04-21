@@ -57,6 +57,32 @@ export class AppComponent {
     }
   }
 
+  export class Doctor {
+    id: string;
+    name: string;
+    specialty: string;
+    age: number;
+    gender: string;
+    bloodGroup: string;
+    address: string;
+    phone: string;
+    email: string;
+    date: string;
+
+    constructor(id: string, name: string, specialty: string, age: number, gender: string, bloodGroup: string, address: string, phone: string, email: string, date: string) {
+        this.id = id;
+        this.name = name;
+        this.specialty = specialty;
+        this.age = age;
+        this.gender = gender;
+        this.bloodGroup = bloodGroup;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.date = date;
+    }
+  }
+
   export class Student {
     id: number;
     name: string;

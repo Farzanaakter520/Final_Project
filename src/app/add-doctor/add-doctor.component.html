@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h1 style="text-align: center;background-color: rgb(201, 211, 238);">Doctor Registration</h1>
+  
+<form (ngSubmit)= "onSubmit()">
+  <fieldset>
+  <div class="mb-3">
+      <label for="doctor_name">Doctor Name:</label><br>
+      <input type="text" class="form-control" id="patient_name" name="doctor_name" [(ngModel)]="doctors.name" placeholder="Doctor Name">
+  </div>
+  <div class="mb-3">
+    <label for="age">Specialty :</label><br>
+    <input type="specialty"  class="form-control" id="specialty" name="specialty" [(ngModel)]="doctors.specialty" placeholder="Age">
+</div>
+ <div class="mb-3">
+      <label for="age">Age :</label><br>
+      <input type="number"  class="form-control" id="age" name="age" [(ngModel)]="doctors.age" placeholder="Age">
+  </div>
+  <div class="mb-3">
+    <label for="gender">Gender:</label><br>
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input" id="male" name="gender" [(ngModel)]="doctors.gender" value="Male"/>
+      <label class="form-check-label" for="male">Male</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+      <input type="radio" class="form-check-input"id="female" name="gender"[(ngModel)]="doctors.gender"value="Female"/>
+      <label class="form-check-label" for="female">Female</label>
+    </div>
+  </div>
+  
+  <div class="mb-3">
+      <label for="blood_group">Blood Group:</label><br>
+      <input type="text" class="form-control" id="blood_group" name="blood_group" [(ngModel)]="doctors.bloodGroup" placeholder="Blood Group">
+
+  </div>
+  <div class="mb-3">
+      <label for="address">Address:</label><br>
+      <input type="text" class="form-control" id="address" name="address" [(ngModel)]="doctors.address" placeholder="Address">
+
+  </div>
+  <div class="mb-3">
+      <label for="phone">Phone:</label><br>
+      <input type="string" class="form-control" id="phone" name="phone" [(ngModel)]="doctors.phone" placeholder="Phone">
+
+  </div>
+  <div class="mb-3">
+      <label for="email">Email:</label><br>
+      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="doctors.email" placeholder="Email">
+
+  </div>
+  <div class="mb-3">
+    <label for="joining_date">Joining Date :</label><br>
+    <input type="joining_date" class="form-control" id="joining_date" name="joining_date"  [(ngModel)]="doctors.date" placeholder="Date">
+</div>
+
+  <button type="submit" class="btn btn-primary">{{ isUpdate? 'Edit' : 'ADD' }}</button>
+</fieldset>
+</form>
+</div>

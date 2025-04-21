@@ -63,17 +63,17 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgb(224, 199, 168);
+    background-color: rgb(247, 246, 246);
 }
 
 
- .container {
+ /* .container {
     max-width: 800px;
      background: rgba(217, 205, 224, 0.9);  
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-} 
+}  */
 
 
  .form-signin {
@@ -108,7 +108,7 @@ p {
     }
 }
 
-/*.a{
+.a{
     background-image: url('https://www.shutterstock.com/image-vector/world-health-day-global-awareness-260nw-2433720935.jpg');
 } 
 
@@ -127,4 +127,4 @@ p {
     line-height: 1.8;
     color: #f8f9faf3;
     text-align: justify;
-}*/
+}
