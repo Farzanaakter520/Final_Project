@@ -85,11 +85,66 @@ fieldset {
 }
 
 
+/* h1 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #f1f3f5;
+} */
+
+/* h1 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1.5px;
+    margin-top: 30px;
+} */
+
+
 h1 {
     text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: 45px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1.5px;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.961) 50%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: skewX(-20deg);
+    animation: stir 2s infinite;
+}
+
+@keyframes stir {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
 }
 
 
@@ -109,16 +164,16 @@ p {
 }
 
 .a{
-    background-image: url('https://www.shutterstock.com/image-vector/world-health-day-global-awareness-260nw-2433720935.jpg');
+    background-image: url('https://t4.ftcdn.net/jpg/04/71/37/41/360_F_471374128_8993i5Rs3r3WIFpnrlBNnxXUCLdb53V7.jpg');
 } 
 
 
 .a {
-    background-image: url('https://image.shutterstock.com/image-vector/world-health-day-global-awareness-260nw-2433720935.jpg');
+    background-image: url('https://t4.ftcdn.net/jpg/04/71/37/41/360_F_471374128_8993i5Rs3r3WIFpnrlBNnxXUCLdb53V7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 100%;
+    height: 80%;
     width: 100%;
 }
 
