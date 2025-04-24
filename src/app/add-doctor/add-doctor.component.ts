@@ -4,10 +4,11 @@ import { NavbarComponent } from "../navbar/navbar.component";
 import { FormsModule } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
 import { Doctor } from '../app.component';
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: 'app-add-doctor',
-  imports: [NavbarComponent,FormsModule],
+  imports: [NavbarComponent, FormsModule, SidebarComponent],
   templateUrl: './add-doctor.component.html',
   styleUrl: './add-doctor.component.css'
 })
