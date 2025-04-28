@@ -19,6 +19,9 @@ import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { RegisterComponent } from './register/register.component';
 import { PrescriptionMedicinesComponent } from './prescription-medicines/prescription-medicines.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { DetailsComponent } from './details/details.component';
 import { AvailableDoctorComponent } from './available-doctor/available-doctor.component';
 
 
@@ -46,6 +49,9 @@ export const routes: Routes = [
        {path:'medicine', component: PharmacyComponent},
        {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
        {path:'addDoctor', component: AddDoctorComponent},
+       {path:'patient-dashboard', component: PatientDashboardComponent},
+       {path:'doctor-dashboard', component: DoctorDashboardComponent},
+       {path: 'details', component: DetailsComponent},
        {path:'availableDoctor', component: AvailableDoctorComponent},
 
        {path:'**', redirectTo: 'home', pathMatch: 'full'}
