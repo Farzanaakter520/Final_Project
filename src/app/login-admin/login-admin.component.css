@@ -1,0 +1,87 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to top */
+}
+
+/* Main container with spacing from top */
+.container {
+  display: flex;
+  margin-top: 100px; /* <-- This adds space from top */
+  width: 80%;
+  max-width: 1000px;
+  background: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Sidebar (role selection) */
+.role-selection {
+  background-color: #003366;
+  color: white;
+  padding: 2rem;
+  width: 40%;
+}
+
+.role-selection h2 {
+  margin-bottom: 1rem;
+}
+
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.roles a button {
+  width: auto;
+  padding: 1rem;
+  background: #0055aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.roles a {
+  text-decoration: none;
+}
+
+/* Login form */
+.login-form {
+  width: 60%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form h2 {
+  margin-bottom: 0.5rem;
+}
+
+.login-form input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+.login-form a button {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #003366;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}

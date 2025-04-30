@@ -1,0 +1,13 @@
+.sidebar-menu ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eee;
+    /* margin-left: 15px; */
+    width: 100%;
+    color: #141c24;
+    background-color: rgb(208, 217, 236);
+}
+.sidebar-menu ul li :hover {
+    background-color: #798da5;
+}

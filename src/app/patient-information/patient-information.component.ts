@@ -61,4 +61,6 @@ export class PatientInformationComponent {
     //this.router.navigate(['/list']);
     alert('Patient Information Saved Successfully');
   }
+
+  
 }

@@ -12,11 +12,23 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
 import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { PharmacyComponent } from './pharmacy/pharmacy.component';
+import { LoginComponent } from './login/login.component';
+import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
+import { LoginPatientsComponent } from './login-patients/login-patients.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
+import { RegisterComponent } from './register/register.component';
+import { PrescriptionMedicinesComponent } from './prescription-medicines/prescription-medicines.component';
+import { AddDoctorComponent } from './add-doctor/add-doctor.component';
+import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { DetailsComponent } from './details/details.component';
+import { AvailableDoctorComponent } from './available-doctor/available-doctor.component';
+
 
 
 
 export const routes: Routes = [
-       {path: '', component: HomeComponent},
+       {path: '', redirectTo: 'home', pathMatch: 'full'},
        {path:'add', component: PatientInformationComponent},
        {path:'list', component: PatientListComponent},
        {path:'home', component: HomeComponent},
@@ -29,9 +41,18 @@ export const routes: Routes = [
        {path:'admin', component: AdminComponent},
        {path:'contact', component: ContactComponent},
        {path:'pharmacy', component: PharmacyComponent},
-       
-       
-       
-       
-       {path:'**', redirectTo: ''},
+       {path:'login', redirectTo: 'login/patients', pathMatch: 'full'},
+       {path:'login/doctor', component: LoginDoctorComponent},
+       {path:'login/patients', component: LoginPatientsComponent},
+       {path:'login/admin', component: LoginAdminComponent},
+       {path:'register', component: RegisterComponent},
+       {path:'medicine', component: PharmacyComponent},
+       {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
+       {path:'addDoctor', component: AddDoctorComponent},
+       {path:'patient-dashboard', component: PatientDashboardComponent},
+       {path:'doctor-dashboard', component: DoctorDashboardComponent},
+       {path: 'details', component: DetailsComponent},
+       {path:'availableDoctor', component: AvailableDoctorComponent},
+
+       {path:'**', redirectTo: 'home', pathMatch: 'full'}
 ];

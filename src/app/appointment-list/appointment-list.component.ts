@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../app.component';
 import { Router } from '@angular/router';
 import { NavbarComponent } from "../navbar/navbar.component";
+import { SidebarComponent } from "../sidebar/sidebar.component";
 
 @Component({
   selector: 'app-appointment-list',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, SidebarComponent],
   templateUrl: './appointment-list.component.html',
   styleUrl: './appointment-list.component.css'
 })

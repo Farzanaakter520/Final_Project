@@ -8,49 +8,64 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:4200/about">About</a>
+            <a class="nav-link active" aria-current="page" href="/about">About</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:4200/departments">Departments</a>
+            <a class="nav-link active" aria-current="page" href="/departments">Departments</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:4200/doctors">Doctors</a>
+            <a class="nav-link active" aria-current="page" href="/doctors">Doctors</a>
           </li>
 
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/availableDoctor">Available Doctors</a>
+          </li>
            <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="http://localhost:4200/addAppointment">Appointment List</a>
           </li>  -->
           
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/add">Patient</a>
+          </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:4200/services">Services</a>
+            <a class="nav-link active" aria-current="page" href="/services">Services</a>
           </li>
 
           
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost:4200/add">Patient</a>
-          </li>
+         
 
           <!-- <li class="nav-item">
             <a class="nav-link" href="http://localhost:4200/list">Patient List</a>
           </li> -->
 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/contact">Contact</a>
+            <a class="nav-link active" href="/contact">Contact</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/pharmacy">Pharmacy</a>
+            <a class="nav-link active" href="/pharmacy">Pharmacy</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/admin">Admin</a>
-          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link active" href="http://localhost:4200/admin">Admin</a>
+          </li> -->
 
-         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/dashboard" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/admin">Admin</a></li>
+              <li><a class="dropdown-item" href="/patient-dashboard">Patient</a></li>
+              <li><a class="dropdown-item" href="/doctor-dashboard">Doctor</a></li>
+              
+            </ul>
+          </li>
 
         </ul>
 
@@ -65,13 +80,15 @@
         
           @if (!isUserLoggedIn) {
           <div class="d-inline p-2">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Registration
-          </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Registration
+            </button>
         </div>
         <div class="d-inline p-2">
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"
+          <a href="login/patients">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"
             data-bs-whatever="@mdo">Login</button>
+            </a>
           </div>
         } @else {
           <h5>
@@ -96,5 +113,6 @@
 
 
 <!-- For login button (login) -->
-<app-login></app-login>
+  <!-- use it where it's needed -->
+<!-- <app-login></app-login>  -->
 

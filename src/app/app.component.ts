@@ -57,6 +57,32 @@ export class AppComponent {
     }
   }
 
+  export class Doctor {
+    id: string;
+    name: string;
+    specialty: string;
+    age: number;
+    gender: string;
+    bloodGroup: string;
+    address: string;
+    phone: string;
+    email: string;
+    date: string;
+
+    constructor(id: string, name: string, specialty: string, age: number, gender: string, bloodGroup: string, address: string, phone: string, email: string, date: string) {
+        this.id = id;
+        this.name = name;
+        this.specialty = specialty;
+        this.age = age;
+        this.gender = gender;
+        this.bloodGroup = bloodGroup;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.date = date;
+    }
+  }
+
   export class Student {
     id: number;
     name: string;
@@ -78,5 +104,78 @@ export class AppComponent {
         this.password = password;
     }
   }
-
+  export class Writer {
+    id: number;
+    writerName: string;
+    writerDept: string;
+    writerFee: number;
+    writerDegree: string;
+    bookName: string;
+    quantity: number;
+    price: number;
+    imageUrl: string;
   
+    constructor(id: number, writerName: string,  bookName: string, writerDept: string, writerFee: number, writerDegree: string, quantity: number, price: number, imageUrl: string
+    ) {
+      this.id = id;
+      this.writerName = writerName;
+      this.bookName = bookName;
+      this.writerDept = writerDept;
+      this.writerFee = writerFee;
+      this.writerDegree = writerDegree;
+      this.quantity = quantity;
+      this.price = price;
+      this.imageUrl = imageUrl;
+    }
+  // constructor(id: number, writerName: string,  bookName: string, quantity: number, price: number, imageUrl: string
+  // ) {
+  //   this.id = id;
+  //   this.writerName = writerName;
+  //   this.bookName = bookName;
+  //   this.quantity = quantity;
+  //   this.price = price;
+  //   this.imageUrl = imageUrl;
+  // }
+  }
+  export class Doctors{
+    doctorId: number;
+    doctorName: string;
+    doctorDept: string;
+    doctorFee: number;
+    doctorDegree: string;
+    isAvailable: boolean;
+  
+  
+    constructor(
+      doctorId: number,
+    doctorName: string,
+    doctorDept: string,
+    doctorFee: number,
+    doctorDegree: string,
+    isAvailable: boolean
+    ){
+      this.doctorId = doctorId;
+      this.doctorName = doctorName;
+      this.doctorDept = doctorDept;
+      this.doctorFee = doctorFee;
+      this.doctorDegree = doctorDegree;
+      this.isAvailable = isAvailable;
+    }
+  }
+  
+  export class Catagory {
+    id: number;
+    name: string;
+    description: string;
+   
+    price: number;
+    imageUrl: string;
+    constructor(id: number, name: string, description: string, quantity: number, price: number, imageUrl: string) {
+      this.id = id;
+      this.name = name;
+      this.description = description;
+     
+      this.price = price;
+      this.imageUrl = imageUrl;
+    }
+  }
