@@ -179,3 +179,39 @@ export class AppComponent {
       this.imageUrl = imageUrl;
     }
   }
+  export class Catagory2 {
+    id: number;
+    name: string;
+    description: string;
+   
+    price: number;
+    imageUrl: string;
+    constructor(id: number, name: string, description: string, quantity: number, price: number, imageUrl: string) {
+      this.id = id;
+      this.name = name;
+      this.description = description;
+     
+      this.price = price;
+      this.imageUrl = imageUrl;
+    }
+  }
+  export class Medicine {
+    id: number;
+    medicineName: string;
+    medicineType: string;
+    medicineManufacturer: string;
+    medicineStock: string;
+    medicineExpiryDate: string;
+    price: number;
+    imageUrl: string;
+    constructor(id: number, medicineName: string, medicineType: string, medicineManufacturer: string,medicineStock: string, medicineExpiryDate: string, price: number, imageUrl: string) {
+      this.id = id;
+      this.medicineName = medicineName;
+      this.medicineType = medicineType;
+      this.medicineManufacturer = medicineManufacturer;
+      this.medicineStock = medicineStock;
+      this.medicineExpiryDate = medicineExpiryDate;
+      this.price = price;
+      this.imageUrl = imageUrl;
+    }
+  }

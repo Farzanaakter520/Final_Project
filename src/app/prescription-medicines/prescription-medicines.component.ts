@@ -1,14 +1,44 @@
 // prescription-medicine.component.ts
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarPharmacyComponent } from "../navbar-pharmacy/navbar-pharmacy.component";
+import {  Catagory2, Medicine } from '../app.component';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-prescription-medicine',
   templateUrl: './prescription-medicines.component.html',
   styleUrls: ['./prescription-medicines.component.css'],
-  imports: [NavbarPharmacyComponent]
+  imports: [NavbarPharmacyComponent, NgFor]
 })
-export class PrescriptionMedicinesComponent {
+export class PrescriptionMedicinesComponent implements OnInit {
+  
+  medicines: Medicine[] = [];
+  catagoryBooks: Catagory2 [] = [];
+  carts: Medicine[] = [];
+  
+  ngOnInit(): void {
+    
+    let allWriters = JSON.parse(localStorage.getItem('medicines') || '[]');
+    this.medicines = allWriters;
+
+    let allCartItems = JSON.parse(localStorage.getItem('catagories') || '[]');
+    this.catagoryBooks = allCartItems;
+
+    let allCarts = JSON.parse(localStorage.getItem('cart') || '[]');
+    this.carts = allCarts;
+
+
+  }
+
+  // addToCart(writer: Medicine): void {
+  //   this.carts.push(writer);
+  //   localStorage.setItem('cart', JSON.stringify(this.carts));
+
+  // }
+
+}
+
+
   // medicines = [
   //   {
   //     name: 'Fluclox',
@@ -45,4 +75,4 @@ export class PrescriptionMedicinesComponent {
   // getDiscountedPrice(price: number): number {
   //   return price - price * 0.05;
   // }
-}
+

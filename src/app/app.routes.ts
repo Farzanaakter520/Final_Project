@@ -23,6 +23,7 @@ import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { DetailsComponent } from './details/details.component';
 import { AvailableDoctorComponent } from './available-doctor/available-doctor.component';
+import { MedicineFormComponent } from './medicine-form/medicine-form.component';
 
 
 
@@ -53,6 +54,7 @@ export const routes: Routes = [
        {path:'doctor-dashboard', component: DoctorDashboardComponent},
        {path: 'details', component: DetailsComponent},
        {path:'availableDoctor', component: AvailableDoctorComponent},
+       {path:'medicine-form', component: MedicineFormComponent},
 
        {path:'**', redirectTo: 'home', pathMatch: 'full'}
 ];

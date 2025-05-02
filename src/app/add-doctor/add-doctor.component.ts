@@ -10,7 +10,7 @@ import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-add-doctor',
-  imports: [FormsModule, FormsModule, CommonModule, NgFor],
+  imports: [ FormsModule, CommonModule, NgFor],
   templateUrl: './add-doctor.component.html',
   styleUrl: './add-doctor.component.css'
 })

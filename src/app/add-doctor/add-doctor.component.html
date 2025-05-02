@@ -76,7 +76,7 @@
     <h1 class="form-title text-primary text-center"> Add Doctor</h1>
     <div class="container shadow-lg p-4 bg-white rounded">
       <form (ngSubmit)="onSubmit()">
-        <!-- Writer's Name -->
+
         <div class="mb-3">
           <label for="writerName" class="form-label fw-bold"> Doctor's Name:</label>
           <input type="text" id="writerName" [(ngModel)]="writer.writerName" name="writerName" required
@@ -95,19 +95,19 @@
           <select class="form-select border-primary shadow-sm rounded-pill" [(ngModel)]="writer.writerDept"
               name="writerDept" required>
               <option value="" disabled selected>-- Select Department --</option>
-              <option value="Pediatricians">👶 Pediatricians</option>
-              <option value="Geriatric medicine">👵 Geriatric Medicine</option>
-              <option value="Dermatologists">🧴 Dermatologists</option>
-              <option value="Infectious disease">🦠 Infectious Disease</option>
-              <option value="Ophthalmologists">👁️ Ophthalmologists</option>
-              <option value="Obstetrician/gynecologists">🤰 Obstetrician/Gynecologists</option>
-              <option value="Cardiologists">❤️ Cardiologists</option>
-              <option value="Endocrinologists">💉 Endocrinologists</option>
-              <option value="Gastroenterologists">🍽️ Gastroenterologists</option>
-              <option value="Nephrologists">🧑‍⚕️ Nephrologists</option>
-              <option value="Urologists">🚻 Urologists</option>
-              <option value="Otolaryngologists">👂 Otolaryngologists</option>
-              <option value="Oncologists">🎗️ Oncologists</option>
+              <option value="Pediatricians"> Pediatricians</option>
+              <option value="Geriatric medicine"> Geriatric Medicine</option>
+              <option value="Dermatologists"> Dermatologists</option>
+              <option value="Infectious disease"> Infectious Disease</option>
+              <option value="Ophthalmologists"> Ophthalmologists</option>
+              <option value="Obstetrician/gynecologists"> Obstetrician/Gynecologists</option>
+              <option value="Cardiologists"> Cardiologists</option>
+              <option value="Endocrinologists"> Endocrinologists</option>
+              <option value="Gastroenterologists"> Gastroenterologists</option>
+              <option value="Nephrologists"> Nephrologists</option>
+              <option value="Urologists"> Urologists</option>
+              <option value="Otolaryngologists"> Otolaryngologists</option>
+              <option value="Oncologists"> Oncologists</option>
           </select>
       </div>
       <!-- <div class="mb-3">
@@ -146,7 +146,6 @@
             class="form-control" />
         </div>
 
-        <!-- Book Image -->
         <div class="mb-3">
           <label for="imageUrl" class="form-label fw-bold"> Doctor Image URL:</label>
           <input type="text" id="imageUrl" [(ngModel)]="writer.imageUrl" name="imageUrl" required class="form-control"
@@ -192,7 +191,7 @@
           <td>{{ writer.bookName }}</td>
           <td>${{ writer.price }}</td>
           <td>
-            <img *ngIf="writer.imageUrl; else noImage" [src]="writer.imageUrl" alt="Book Image" class="img-thumbnail" width="60" height="60" />
+            <img *ngIf="writer.imageUrl; else noImage" [src]="writer.imageUrl" alt="Doctor's Image" class="img-thumbnail" width="60" height="60" />
             <ng-template #noImage>
               <span class="text-muted">No Image</span>
             </ng-template>
@@ -206,7 +205,6 @@
       </tbody>
     </table>
 
-    <!-- No Books Message -->
     <div *ngIf="writers.length === 0" class="alert alert-warning text-center mt-3">
       <!-- 📌 No books have been added yet. Start by adding a new book! -->
     </div>
