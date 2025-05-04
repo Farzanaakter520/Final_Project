@@ -3,6 +3,7 @@ import { LoginRegisterService } from '../services/login-register.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../navbar/navbar.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -47,4 +48,22 @@ export class LoginComponent {
     // Add actual login logic here
   }
 }
+// email = '';
+// password = '';
 
+// constructor(private auth: AuthService, private router: Router) { }
+
+// onLogin() {
+//   this.auth.login({ email: this.email, password: this.password })
+//     .subscribe({
+//       next: (res) => {
+//         this.auth.setToken(res.access_token);
+//         this.router.navigate(['/dashboard']);
+//       },
+//       error: (error) => {
+//         alert('Invalid credentials')
+//         console.log(error)
+//       }
+//     });
+// }
+// }

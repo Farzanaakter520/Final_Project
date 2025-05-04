@@ -1,0 +1,5 @@
+<h1>Dashboard</h1>
+<p *ngIf="role === 'admin'">Admin Panel</p>
+<p *ngIf="role === 'doctor'">Doctor Panel</p>
+<p *ngIf="role === 'patient'">Patient Panel</p>
+<button (click)="logout()">Logout</button>

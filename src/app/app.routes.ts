@@ -24,6 +24,12 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
 import { DetailsComponent } from './details/details.component';
 import { AvailableDoctorComponent } from './available-doctor/available-doctor.component';
 import { MedicineFormComponent } from './medicine-form/medicine-form.component';
+import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+import { authGuard } from './core/auth.guard';
+import { DoctorViewComponent } from './pages/doctor-view/doctor-view.component';
+import { PatientViewComponent } from './pages/patient-view/patient-view.component';
+import { AdminViewComponent } from './pages/admin-view/admin-view.component';
+import { CommonViewComponent } from './pages/common-view/common-view.component';
 
 
 
@@ -42,11 +48,11 @@ export const routes: Routes = [
        {path:'admin', component: AdminComponent},
        {path:'contact', component: ContactComponent},
        {path:'pharmacy', component: PharmacyComponent},
-       {path:'login', redirectTo: 'login/patients', pathMatch: 'full'},
-       {path:'login/doctor', component: LoginDoctorComponent},
-       {path:'login/patients', component: LoginPatientsComponent},
-       {path:'login/admin', component: LoginAdminComponent},
-       {path:'register', component: RegisterComponent},
+       // {path:'login', redirectTo: 'login/patients', pathMatch: 'full'},
+       // {path:'login/doctor', component: LoginDoctorComponent},
+       // {path:'login/patients', component: LoginPatientsComponent},
+       // {path:'login/admin', component: LoginAdminComponent},
+       // {path:'register', component: RegisterComponent},
        {path:'medicine', component: PharmacyComponent},
        {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
        {path:'addDoctor', component: AddDoctorComponent},
@@ -56,5 +62,54 @@ export const routes: Routes = [
        {path:'availableDoctor', component: AvailableDoctorComponent},
        {path:'medicine-form', component: MedicineFormComponent},
 
+
+       {
+              path: 'register',
+              component: RegisterComponent
+          },
+          {
+              path: 'login',
+              component: LoginComponent,
+          },
+          {
+              path: 'dashboard',
+              component: MainLayoutComponent,
+              canActivate: [authGuard],
+              children: [
+                  {
+                      path: 'doctor-view',
+                      component: DoctorViewComponent,
+                      data: { roles: ['doctor', 'admin', 'patient'] },
+                      canActivate: [authGuard]
+                  },
+                  {
+                      path: 'patient-view',
+                      component: PatientViewComponent,
+                      data: { roles: ['patient', 'admin'] },
+                      canActivate: [authGuard]
+                  },
+                  {
+                      path: 'admin-view',
+                      component: AdminViewComponent,
+                      data: { roles: ['admin'] },
+                      canActivate: [authGuard]
+                  },
+                  {
+                      path: 'common',
+                      component: CommonViewComponent,
+                      canActivate: [authGuard],
+                      data: { roles: ['doctor', 'patient', 'admin'] }
+                  },
+                  {
+                      path: '',
+                      redirectTo: 'common',
+                      pathMatch: 'full'
+                  }
+              ]
+          },
+          {
+              path: '**',
+              redirectTo: 'login'
+          },
        {path:'**', redirectTo: 'home', pathMatch: 'full'}
 ];

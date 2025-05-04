@@ -1,0 +1,19 @@
+<div class="register">
+    <h2>Register</h2>
+    <input type="text" [(ngModel)]="name" placeholder=" Name" name="name">
+    <input type="text" [(ngModel)]="phoneNumber" placeholder="Phone Number" name="phoneNumber">
+    <div class="role">
+        <select [(ngModel)]="role" name="role">
+            <option value="" disabled selected>Select Role</option>
+            <option value="DOCTOR">Doctor</option>
+            <option value="PATIENT">Patient</option>
+            <option value="ADMIN">Admin</option>
+        </select>
+    </div>
+    <input type="text" [(ngModel)]="email" placeholder="Email" name="email">
+    <input type="password" [(ngModel)]="password" placeholder="Password" name="password">
+    <p>Password must be at least 5 characters</p>
+    
+    <button (click)="onRegister()">Register</button>
+    <a href="login" class="login-link">👉 Login Now!</a>
+</div>
