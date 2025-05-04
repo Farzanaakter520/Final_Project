@@ -17,7 +17,7 @@ export class AuthService {
     return this.http.post<any>('http://localhost:8081/api/auth/login', credentials);
   }
 
-  register(credentials: {name: string;  phoneNumber: string; email: string; password: string; role: string}) {
+  register(credentials: {name: string; phoneNumber: string; email: string; password: string; role: string}) {
     return this.http.post<any>('http://localhost:8081/api/auth/register', credentials);
   }
 

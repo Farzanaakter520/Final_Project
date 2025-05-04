@@ -30,6 +30,7 @@ import { DoctorViewComponent } from './pages/doctor-view/doctor-view.component';
 import { PatientViewComponent } from './pages/patient-view/patient-view.component';
 import { AdminViewComponent } from './pages/admin-view/admin-view.component';
 import { CommonViewComponent } from './pages/common-view/common-view.component';
+import { GeneratePrescriptionComponent } from './generate-prescription/generate-prescription.component';
 
 
 
@@ -48,11 +49,11 @@ export const routes: Routes = [
        {path:'admin', component: AdminComponent},
        {path:'contact', component: ContactComponent},
        {path:'pharmacy', component: PharmacyComponent},
-       // {path:'login', redirectTo: 'login/patients', pathMatch: 'full'},
-       // {path:'login/doctor', component: LoginDoctorComponent},
-       // {path:'login/patients', component: LoginPatientsComponent},
-       // {path:'login/admin', component: LoginAdminComponent},
-       // {path:'register', component: RegisterComponent},
+       {path:'login', redirectTo: 'login/patients', pathMatch: 'full'},
+       {path:'login/doctor', component: LoginDoctorComponent},
+       {path:'login/patients', component: LoginPatientsComponent},
+       {path:'login/admin', component: LoginAdminComponent},
+       {path:'register', component: RegisterComponent},
        {path:'medicine', component: PharmacyComponent},
        {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
        {path:'addDoctor', component: AddDoctorComponent},
@@ -61,7 +62,9 @@ export const routes: Routes = [
        {path: 'details', component: DetailsComponent},
        {path:'availableDoctor', component: AvailableDoctorComponent},
        {path:'medicine-form', component: MedicineFormComponent},
+       {path:'generate-prescription', component: GeneratePrescriptionComponent},
 
+      
 
        {
               path: 'register',

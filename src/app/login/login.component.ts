@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../navbar/navbar.component";
 import { Router } from '@angular/router';
+import { AuthService } from '../core/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ export class LoginComponent {
   pass: string = "";
 
   constructor(
-    private loginRegisterService: LoginRegisterService
+    private loginRegisterService: LoginRegisterService, 
+    private auth: AuthService,
+    private router: Router
   ) {}
 
   onSubmit() {
@@ -35,7 +38,7 @@ export class LoginComponent {
     { name: 'Patient', icon: 'fas fa-user-graduate' }
   ];
 
-  username = '';
+  // email = '';
   password = '';
   selectedRole = '';
 
@@ -44,9 +47,24 @@ export class LoginComponent {
   }
 
   login() {
-    console.log(`Logging in as ${this.selectedRole} with username: ${this.username}`);
+    console.log(`Logging in as ${this.selectedRole} with username: ${this.email}`);
     // Add actual login logic here
   }
+
+  onLogin() {
+    this.auth.login({ email: this.email, password: this.password })
+      .subscribe({
+        next: (res) => {
+          this.auth.setToken(res.access_token);
+          this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          alert('Invalid credentials')
+          console.log(error)
+        }
+      });
+  }
+
 }
 // email = '';
 // password = '';

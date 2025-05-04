@@ -13,14 +13,17 @@ export class LoginComponent {
   email = '';
   password = '';
 
-  constructor(private auth: AuthService, private router: Router) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
 
   onLogin() {
     this.auth.login({ email: this.email, password: this.password })
       .subscribe({
         next: (res) => {
           this.auth.setToken(res.access_token);
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/home']);
         },
         error: (error) => {
           alert('Invalid credentials')
@@ -29,4 +32,5 @@ export class LoginComponent {
       });
   }
 }
+
 

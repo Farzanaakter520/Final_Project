@@ -1,0 +1,114 @@
+<div class="container my-4">
+    <div class="card shadow-sm">
+      <div class="card-header text-center bg-primary text-white">
+        <h1>Prescription</h1>
+      </div>
+  
+      <div class="card-body">
+        <!-- Patient Info -->
+        <h4 class="mb-3">Patient Information</h4>
+        <form [formGroup]="prescriptionForm">
+          <div class="row mb-3">
+            <div class="col-md-4">
+              <label for="prescriptionId" class="form-label"
+                ><strong>Prescription ID</strong></label
+              >
+              <input
+                id="prescriptionId"
+                formControlName="prescriptionId"
+                type="text"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="patientName" class="form-label"
+                ><strong>Patient's Name</strong></label
+              >
+              <input
+                id="patientName"
+                formControlName="patientName"
+                type="text"
+                class="form-control"
+                required
+              />
+            </div>
+            <div class="col-md-4">
+              <label for="doctorId" class="form-label"
+                ><strong>Doctor ID</strong></label
+              >
+              <input
+                id="doctorId"
+                formControlName="doctorId"
+                type="text"
+                class="form-control"
+                required
+              />
+            </div>
+          </div>
+  
+          <!-- Medicines -->
+          <h4 class="mt-4 mb-3">Medicines</h4>
+          <table class="table table-bordered">
+            <thead class="table-light">
+              <tr>
+                <th>Medicine Name</th>
+                <th>Dosage</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    formControlName="medicineName"
+                    class="form-control"
+                    placeholder="e.g., Napa500"
+                  />
+                </td>
+                <td>
+                  <input
+                    formControlName="dosage"
+                    class="form-control"
+                    placeholder="e.g., Morning before meal"
+                  />
+                </td>
+                <td>
+                  <input
+                    formControlName="duration"
+                    class="form-control"
+                    placeholder="e.g., 10 days"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <!-- Investigations -->
+          <h4 class="mt-4">Investigations</h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item" *ngIf="investigation1">
+              {{ investigation1 }}
+            </li>
+          </ul>
+  
+          <!-- Advice -->
+          <h4>Advice</h4>
+          <div class="alert alert-info">
+            {{ advice }} <br /> <br>
+            <textarea
+              class="form-control"
+              rows="5"
+              style="width: 100%; resize: vertical"
+              placeholder="Enter your advice here"
+            ></textarea>
+          </div>
+  
+          <!-- Follow-Up Date -->
+          <h4>Follow-Up Date</h4>
+          <p class="text-muted">{{ followUpDate }}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+  
