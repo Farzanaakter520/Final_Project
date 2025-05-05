@@ -60,5 +60,3 @@ interface UserResponse {
   name?: string;
   phoneNumber?: string;
 }
-
-

@@ -13,10 +13,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ContactComponent } from './contact/contact.component';
 import { PharmacyComponent } from './pharmacy/pharmacy.component';
 import { LoginComponent } from './login/login.component';
-import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
-import { LoginPatientsComponent } from './login-patients/login-patients.component';
-import { LoginAdminComponent } from './login-admin/login-admin.component';
-import { RegisterComponent } from './register/register.component';
+
+
 import { PrescriptionMedicinesComponent } from './prescription-medicines/prescription-medicines.component';
 import { AddDoctorComponent } from './add-doctor/add-doctor.component';
 import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
@@ -24,13 +22,12 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
 import { DetailsComponent } from './details/details.component';
 import { AvailableDoctorComponent } from './available-doctor/available-doctor.component';
 import { MedicineFormComponent } from './medicine-form/medicine-form.component';
-import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+
 import { authGuard } from './core/auth.guard';
-import { DoctorViewComponent } from './pages/doctor-view/doctor-view.component';
-import { PatientViewComponent } from './pages/patient-view/patient-view.component';
-import { AdminViewComponent } from './pages/admin-view/admin-view.component';
-import { CommonViewComponent } from './pages/common-view/common-view.component';
+
 import { GeneratePrescriptionComponent } from './generate-prescription/generate-prescription.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -42,18 +39,16 @@ export const routes: Routes = [
        {path:'home', component: HomeComponent},
        {path:'about', component: AboutComponent},
        {path:'departments', component: DepartmentComponent},
-       {path:'doctors', component: DoctorsComponent},
+    //    {path:'doctors', component: DoctorsComponent},
        {path:'services', component: ServicesComponent},
        {path:'addAppointment', component: AppointmentFormComponent},
        {path:'appointmentList', component: AppointmentListComponent},
        {path:'admin', component: AdminComponent},
        {path:'contact', component: ContactComponent},
        {path:'pharmacy', component: PharmacyComponent},
-       {path:'login', redirectTo: 'login/patients', pathMatch: 'full'},
-       {path:'login/doctor', component: LoginDoctorComponent},
-       {path:'login/patients', component: LoginPatientsComponent},
-       {path:'login/admin', component: LoginAdminComponent},
-       {path:'register', component: RegisterComponent},
+       {path:'login', component: LoginComponent},
+      
+    
        {path:'medicine', component: PharmacyComponent},
        {path:'prescription-medicines', component: PrescriptionMedicinesComponent},
        {path:'addDoctor', component: AddDoctorComponent},
@@ -63,56 +58,9 @@ export const routes: Routes = [
        {path:'availableDoctor', component: AvailableDoctorComponent},
        {path:'medicine-form', component: MedicineFormComponent},
        {path:'generate-prescription', component: GeneratePrescriptionComponent},
+       { path: 'register', component: RegistrationComponent },
 
-      
+        { path: '', component:NavbarComponent, canActivate: [authGuard],}
 
-       {
-              path: 'register',
-              component: RegisterComponent
-          },
-          {
-              path: 'login',
-              component: LoginComponent,
-          },
-          {
-              path: 'dashboard',
-              component: MainLayoutComponent,
-              canActivate: [authGuard],
-              children: [
-                  {
-                      path: 'doctor-view',
-                      component: DoctorViewComponent,
-                      data: { roles: ['doctor', 'admin', 'patient'] },
-                      canActivate: [authGuard]
-                  },
-                  {
-                      path: 'patient-view',
-                      component: PatientViewComponent,
-                      data: { roles: ['patient', 'admin'] },
-                      canActivate: [authGuard]
-                  },
-                  {
-                      path: 'admin-view',
-                      component: AdminViewComponent,
-                      data: { roles: ['admin'] },
-                      canActivate: [authGuard]
-                  },
-                  {
-                      path: 'common',
-                      component: CommonViewComponent,
-                      canActivate: [authGuard],
-                      data: { roles: ['doctor', 'patient', 'admin'] }
-                  },
-                  {
-                      path: '',
-                      redirectTo: 'common',
-                      pathMatch: 'full'
-                  }
-              ]
-          },
-          {
-              path: '**',
-              redirectTo: 'login'
-          },
-       {path:'**', redirectTo: 'home', pathMatch: 'full'}
+    
 ];

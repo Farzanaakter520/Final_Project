@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+
 <!-- <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <form (submit)="onSubmit()">  
     <div class="modal-dialog">
@@ -29,7 +29,7 @@
        </div>
       -->
 
-      <div class="container">
+      <!-- <div class="container">
         <div class="role-selection">
           <h2>Login Portal</h2>
           <p>Select your role to login</p>
@@ -50,7 +50,7 @@
           <a href="#">Forgot password? <strong>Reset here</strong></a>
         </div>
         
-      </div> 
+      </div>  -->
        
    
 
@@ -61,3 +61,61 @@
           <button (click)="onLogin()">Login</button>
           <a href="register" class="register-link">👉 Register Now!</a>
       </div> -->
+<!-- 
+
+      <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow p-4 rounded-4">
+                <h3 class="text-center mb-4">🔐 Login</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">📧 Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" [(ngModel)]="email"
+                            name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">🔑 Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password"
+                            [(ngModel)]="password" name="password" required>
+                    </div>
+                    <button (click)="onLogin()" class="btn btn-primary w-100 mb-2">Login</button>
+                </form>
+                <button routerLink="/register" class="btn btn-outline-primary w-100">Register as Patient</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
+
+
+    <div class="body">
+      <div class="login-form">
+        <h2>Welcome Back</h2>
+        <p>Please enter your credentials to access your account</p>
+        <form >
+          <label for="email"> 📧 Email:</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            name="email" placeholder="Enter your email"
+            required
+          />
+          <label for="password"> 🔑 Password:</label>
+          <input
+            id="password"
+            type="password"
+            [(ngModel)]="password"
+            name="password" placeholder="Enter your password"
+            required
+          />
+          <button (click)="onLogin()"> 🔐Login</button>
+        </form><br>
+        <a href="register" class="register-link btn btn-outline-primary w-100">👉 Register Now!</a>
+        <!-- <button href="/register" class="btn btn-outline-primary w-100">Patient Registration </button> -->
+
+        </div>
+        </div>
+

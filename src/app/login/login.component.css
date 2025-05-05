@@ -1,65 +1,77 @@
-.container {
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-  }
-  
-  .role-selection {
-    background-color: #003366;
-    color: white;
-    padding: 2rem;
-    width: 40%;
-  }
-  
-  .role-selection h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .roles {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .roles button {
-    width: 45%;
-    padding: 1rem;
-    background: #0055aa;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .login-form {
-    width: 60%;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .login-form h2 {
-    margin-bottom: 0.5rem;
-  }
-  
-  .login-form input {
-    width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.75rem;
-    font-size: 1rem;
-  }
-  
-  .login-form button {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background: #003366;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
+/* Make sure the whole page takes up full height and is centered */
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #78cfdf, #acb6e5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* Style the login form container */
+.login-form {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Header and description text */
+.login-form h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.login-form p {
+  margin-bottom: 25px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Label styling */
+.login-form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Input fields */
+.login-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.login-form input:focus {
+  border-color: #74b9ff;
+  outline: none;
+}
+
+/* Button styling */
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #6f93b9;
+}

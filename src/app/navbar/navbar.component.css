@@ -23,3 +23,31 @@
         left: 125%;
     }
 } */
+
+
+.btn {
+    transition: all 0.3s ease-in-out;
+    
+  }
+  .btn {
+    background-color: #4383e2;
+    color: rgb(239, 242, 243);
+    
+  }
+
+  .btn-outline-primary:hover {
+    background-color: #edf0f5;
+    color: white;
+    border-color: #0b0e13;
+    color: rgb(5, 11, 15);
+    
+    
+  }
+  
+  .btn-outline-danger:hover {
+    background-color: #b84f5a;
+    color: white;
+    border-color: #130809;
+  
+  }
+  

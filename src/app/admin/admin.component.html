@@ -1,21 +1,21 @@
 <app-navbar></app-navbar>
 <div class="row">
-    <div class="col-2">
-        <app-sidebar></app-sidebar>
-    </div>
+  <div class="col-2">
+    <app-sidebar></app-sidebar>
+  </div>
 
-    <div class="col-10">
-        <div class="card shadow p-4" style="width: 300px;">
-            <img src="{{ admin.profileImage }}" class="card-img-top rounded-circle mb-3" alt="Admin Avatar" style="width: 100px; height: 100px; object-fit: cover; margin: auto;">
-            <div class="card-body text-center">
-              <h5 class="card-title">{{ admin.name }}</h5>
-              <p class="card-text">{{ admin.email }}</p>
-              <p class="card-text text-muted">{{ admin.role }}</p>
-              <button class="btn btn-primary" (click)="editProfile()">Edit Profile</button>
-            </div>
-          </div>
-          
-    
-
+  <div class="col-10 d-flex justify-content-center align-items-start pt-4">
+    <div class="profile-card-horizontal shadow">
+      <div class="profile-left">
+        <img src="{{ admin.profileImage }}" alt="Admin Avatar" class="profile-avatar-horizontal" />
+      </div>
+      <div class="profile-right">
+        <h4 class="profile-name">{{ admin.name }}</h4>
+        <p class="profile-detail"><strong>Email:</strong> {{ admin.email }}</p>
+        <p class="profile-detail"><strong>Phone:</strong> {{ admin.phone }}</p>
+        <p class="profile-detail"><strong>Role:</strong> {{ admin.role }}</p>
+        <button class="btn btn-custom-horizontal" (click)="editProfile()">Edit Profile</button>
+      </div>
     </div>
+  </div>
 </div>

@@ -14,10 +14,10 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/departments">Departments</a>
           </li>
-
+<!-- 
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/doctors">Doctors</a>
-          </li>
+          </li> -->
 
 
           <li class="nav-item">
@@ -50,6 +50,8 @@
           <li class="nav-item">
             <a class="nav-link active" href="/pharmacy">Pharmacy</a>
           </li>
+          
+         
 
           <!-- <li class="nav-item">
             <a class="nav-link active" href="http://localhost:4200/admin">Admin</a>
@@ -67,52 +69,40 @@
             </ul>
           </li>
 
-        </ul>
-
-        
-      <form >
-        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-          
-          >
-          <button class="btn btn-light" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-          </svg></button>  -->
-        
-          @if (!isUserLoggedIn) {
-          <div class="d-inline p-2">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Registration
-            </button>
-        </div>
-        <div class="d-inline p-2">
-          <a href="login/patients">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2"
-            data-bs-whatever="@mdo">Login</button>
+          <!-- <div class="d-inline p-2">
+            <a href="login">
+              <button class="btn btn-primary" type="button">Login</button>
             </a>
-          </div>
-        } @else {
-          <h5>
-            User: <i>{{loggedinUserName}}</i>
-            (<a (click)="logoutBtn()" style="cursor: pointer;font-size: 16px; color: rgb(27, 21, 43);">Logout</a>)
-          </h5>
-          
-        }
+  
+        </div>
 
-        
-      </form>
+          <li class="nav-item">
+            <button (click)="logout()"
+                class="nav-link btn btn-link text-white px-3 py-2 rounded-lg transition-all hover:bg-light-green">
+                 Logout
+            </button>
+        </li> -->
+
+<!-- LOGIN BUTTON -->
+<div class="d-inline-block me-2">
+  <a href="login" class="btn btn-outline-primary px-4 py-2 rounded-pill shadow-sm">
+    Login
+  </a>
+</div>
+
+<!-- LOGOUT BUTTON -->
+<li class="nav-item d-inline-block">
+  <button (click)="logout()"
+    class="btn btn-outline-danger px-4 py-2 rounded-pill shadow-sm ">
+     Logout
+  </button>
+</li>
 
 
-    </div>
-  </div>
-</nav>
+        </ul>
+        </div>
+        </div>
+       </nav>
 
-<!-- Button trigger modal (register) -->
- <app-register></app-register>
-
-
-
-
-<!-- For login button (login) -->
-  <!-- use it where it's needed -->
-<!-- <app-login></app-login>  -->
+      
 
