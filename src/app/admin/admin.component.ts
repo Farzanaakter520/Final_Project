@@ -11,6 +11,7 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 export class AdminComponent implements OnInit {
   admin = {
     name: 'Farzana Akter Nilu',
+    id:1001,
     email: 'farzana@example.com',
     phone:'+880123456789',
     role: 'Administrator',

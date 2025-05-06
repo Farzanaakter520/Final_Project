@@ -1,0 +1,15 @@
+.container {
+    background-image: url('https://wallpapercave.com/wp/wp2655106.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    padding: 20px; /* Adds some spacing inside the container */
+    border-radius: 10px; /* Rounds the corners */
+  }
+  
+  h1 {
+    background-color: rgba(201, 211, 238, 0.8); /* Adds transparency to the background */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

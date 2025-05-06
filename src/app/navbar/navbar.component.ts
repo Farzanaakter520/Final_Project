@@ -12,8 +12,11 @@ import { AuthService } from '../core/auth.service';
 })
 export class NavbarComponent implements OnInit {
   userRole = '';
+  showLogin = false;
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService) { 
+    this.showLogin = !this.auth.isAuthenticated();
+  }
 
   ngOnInit(): void {
     this.userRole = this.auth.getUserRole();

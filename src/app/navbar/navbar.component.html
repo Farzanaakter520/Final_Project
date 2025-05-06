@@ -1,75 +1,72 @@
-<nav class="navbar navbar-expand-lg " style="background-color: #a49ce9;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="http://localhost:4200/home"><i class="bi bi-house-gear-fill"></i>Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<nav class="navbar navbar-expand-lg" style="background-color: #a49ce9">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://localhost:4200/home"><i class="bi bi-house-gear-fill"></i>Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/about">About</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/about">About</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/departments">Departments</a>
-          </li>
-<!-- 
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/departments">Departments</a>
+        </li>
+        <!-- 
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/doctors">Doctors</a>
           </li> -->
 
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/availableDoctor">Available Doctors</a>
-          </li>
-           <!-- <li class="nav-item">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/availableDoctor">Available Doctors</a>
+        </li>
+        <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="http://localhost:4200/addAppointment">Appointment List</a>
           </li>  -->
-          
-          <li class="nav-item">
+
+        <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/add">Patient</a>
-          </li>
+          </li> -->
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/services">Services</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/services">Services</a>
+        </li>
 
-          
-
-         
-
-          <!-- <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="http://localhost:4200/list">Patient List</a>
           </li> -->
 
-          <li class="nav-item">
-            <a class="nav-link active" href="/contact">Contact</a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/contact">Contact</a>
+        </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" href="/pharmacy">Pharmacy</a>
-          </li>
-          
-         
+        <li class="nav-item">
+          <a class="nav-link active" href="/pharmacy">Pharmacy</a>
+        </li>
 
-          <!-- <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link active" href="http://localhost:4200/admin">Admin</a>
           </li> -->
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/dashboard" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dashboard
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/admin">Admin</a></li>
-              <li><a class="dropdown-item" href="/patient-dashboard">Patient</a></li>
-              <li><a class="dropdown-item" href="/doctor-dashboard">Doctor</a></li>
-              
-            </ul>
-          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/dashboard" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/admin">Admin</a></li>
+            <li>
+              <a class="dropdown-item" href="/patient-dashboard">Patient</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/doctor-dashboard">Doctor</a>
+            </li>
+          </ul>
+        </li>
 
-          <!-- <div class="d-inline p-2">
+        <!-- <div class="d-inline p-2">
             <a href="login">
               <button class="btn btn-primary" type="button">Login</button>
             </a>
@@ -83,26 +80,23 @@
             </button>
         </li> -->
 
-<!-- LOGIN BUTTON -->
-<div class="d-inline-block me-2">
-  <a href="login" class="btn btn-outline-primary px-4 py-2 rounded-pill shadow-sm">
-    Login
-  </a>
-</div>
-
-<!-- LOGOUT BUTTON -->
-<li class="nav-item d-inline-block">
-  <button (click)="logout()"
-    class="btn btn-outline-danger px-4 py-2 rounded-pill shadow-sm ">
-     Logout
-  </button>
-</li>
-
-
-        </ul>
+        @if(showLogin){
+        <!-- LOGIN BUTTON -->
+        <div class="d-inline-block me-2">
+          <a href="login" class="btn btn-outline-primary px-4 py-2 rounded-pill shadow-sm">
+            Login
+          </a>
         </div>
-        </div>
-       </nav>
+        }@else {
 
-      
-
+        <!-- LOGOUT BUTTON -->
+        <li class="nav-item d-inline-block">
+          <button (click)="logout()" class="btn btn-outline-danger px-4 py-2 rounded-pill shadow-sm">
+            Logout
+          </button>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
