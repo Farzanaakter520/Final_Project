@@ -1,0 +1,27 @@
+<h2>Create Prescription</h2>
+
+<form (ngSubmit)="onSubmit()" #prescriptionForm="ngForm">
+  <div>
+    <label for="patientId">Patient ID:</label>
+    <input type="number" id="patientId" name="patientId" [(ngModel)]="prescriptions.patientId" required />
+  </div><br>
+
+  <div>
+    <label for="doctorId">Doctor ID:</label>
+    <input type="number" id="doctorId" name="doctorId" [(ngModel)]="prescriptions.doctorId" required />
+  </div><br>
+
+  <div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" [(ngModel)]="prescriptions.description" required /> 
+  </div><br>
+
+  <div>
+    <label for="prescription_date">Prescription_Date:</label>
+    <input type="date" id="prescription_date" name="prescription_date" [(ngModel)]="prescriptions.prescription_date" required />
+  </div><br>
+
+  <button type="submit" [disabled]="!prescriptionForm.form.valid">
+    Submit
+  </button>
+</form>

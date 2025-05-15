@@ -1,13 +1,15 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { Medicine } from '../app.component';
 import { Router } from '@angular/router';
 import { CartService } from '../services/cart.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
+import { Medicine } from '../models/medicine';
+import { MedicineService } from '../services/medicine.service';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-medicine-form',
-  imports: [FormsModule, CommonModule, NgFor],
+  imports: [FormsModule, CommonModule, NgFor, NavbarComponent],
   templateUrl: './medicine-form.component.html',
   styleUrl: './medicine-form.component.css'
 })
@@ -16,19 +18,24 @@ export class MedicineFormComponent implements OnInit {
   carts: Medicine[] = [];
 
   medicines: Medicine[] = []; // Array to store books data
-  medicine: Medicine = new Medicine(0, '', '','','','',0, ''); // Object for form data
+  medicine: Medicine = new Medicine(); // Object for form data
   isUpdate: boolean = false; // Flag to check if it’s update mode
   currentIndex: number | null = null; // To store the index of the medicine being edited
   
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private medicineService: MedicineService) { }
 
   ngOnInit(): void {
-    const medicinesFromStorage = localStorage.getItem('medicines');
-    if (medicinesFromStorage) {
-      this.medicines = JSON.parse(medicinesFromStorage) as Medicine[];
-    }
-    console.log('Medicines:', this.medicines); // Check if medicines are loaded
+
+    this.medicineService.getMedicine().subscribe(medicines => {
+      this.medicines = medicines;
+    });
+
+    // const medicinesFromStorage = localStorage.getItem('medicines');
+    // if (medicinesFromStorage) {
+    //   this.medicines = JSON.parse(medicinesFromStorage) as Medicine[];
+    // }
+    // console.log('Medicines:', this.medicines); // Check if medicines are loaded
 
     let allCarts = JSON.parse(localStorage.getItem('customers') || '[]');
     this.carts =allCarts;
@@ -42,15 +49,20 @@ export class MedicineFormComponent implements OnInit {
     }
   
     localStorage.setItem('medicines', JSON.stringify(this.medicines)); // Save updated list to localStorage
-    this.medicine = new Medicine(0, '', '','','','',0, '');
-    this.isUpdate = false; // Reset update flag
-    this.currentIndex = null; // Reset index
-    alert("Successfull!")
+    //call api
+    this.medicineService.addMedicine(this.medicine).subscribe((data) => {
+      this.medicine = new Medicine();
+      this.isUpdate = false; // Reset update flag
+      this.currentIndex = null; // Reset index
+      alert("Successfull!")
+    }, (error) => {
+      console.log(error);
+    });
   }
   
   // Reset the form after submission
   resetForm(): void {
-    this.medicine = new Medicine(0, '', '','','','',0, '');
+    this.medicine = new Medicine();
     this.isUpdate = false; // Reset update flag
     this.currentIndex = null; // Reset index
     alert("Successfull!")
@@ -90,6 +102,6 @@ export class MedicineFormComponent implements OnInit {
 
   // Track by function for *ngFor (helps with better performance)
   trackMedicine(index: number, medicine: Medicine): number {
-    return medicine.id; // Using medicine's name as a unique identifier
+    return medicine.medicine_id; // Using medicine's name as a unique identifier
   }
 }

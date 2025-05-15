@@ -1,8 +1,10 @@
 // prescription-medicine.component.ts
 import { Component, OnInit } from '@angular/core';
 import { NavbarPharmacyComponent } from "../navbar-pharmacy/navbar-pharmacy.component";
-import {  Catagory2, Medicine } from '../app.component';
 import { NgFor } from '@angular/common';
+import { MedicineService } from '../services/medicine.service';
+import { Medicine } from '../models/medicine';
+import { Catagory2 } from '../app.component';
 
 @Component({
   selector: 'app-prescription-medicine',
@@ -13,16 +15,24 @@ import { NgFor } from '@angular/common';
 export class PrescriptionMedicinesComponent implements OnInit {
   
   medicines: Medicine[] = [];
-  catagoryBooks: Catagory2 [] = [];
+  catagoryMedicines: Catagory2 [] = [];
   carts: Medicine[] = [];
+
+
+  constructor(private medicineService: MedicineService) {
+   }
   
   ngOnInit(): void {
+
+    this.medicineService.getMedicine().subscribe((data) => {
+      this.medicines = data;
+    });
     
-    let allWriters = JSON.parse(localStorage.getItem('medicines') || '[]');
-    this.medicines = allWriters;
+    let allMedicines = JSON.parse(localStorage.getItem('medicines') || '[]');
+    this.medicines = allMedicines;
 
     let allCartItems = JSON.parse(localStorage.getItem('catagories') || '[]');
-    this.catagoryBooks = allCartItems;
+    this.catagoryMedicines = allCartItems;
 
     let allCarts = JSON.parse(localStorage.getItem('cart') || '[]');
     this.carts = allCarts;
@@ -30,11 +40,11 @@ export class PrescriptionMedicinesComponent implements OnInit {
 
   }
 
-  // addToCart(writer: Medicine): void {
-  //   this.carts.push(writer);
-  //   localStorage.setItem('cart', JSON.stringify(this.carts));
+  addToCart(medicine: Medicine): void {
+    this.carts.push(medicine);
+    localStorage.setItem('cart', JSON.stringify(this.carts));
 
-  // }
+  }
 
 }
 

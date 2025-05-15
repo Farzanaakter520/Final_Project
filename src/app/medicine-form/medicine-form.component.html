@@ -28,6 +28,7 @@
   </form>
    -->
 
+   <app-navbar></app-navbar>
    <div class="row p-2">
     <!-- Form Section -->
     <div class="col-md-5">
@@ -37,32 +38,32 @@
   
           <div class="mb-3">
             <label for="medicineName" class="form-label fw-bold"> Medicine's Name:</label>
-            <input type="text" id="medicineName" [(ngModel)]="medicine.medicineName" name="medicineName" required
+            <input type="text" id="medicineName" [(ngModel)]="medicine.name" name="medicineName" required
               class="form-control" placeholder="Enter Medicine's name" />
           </div>
   
         <div class="mb-3">
             <label class="form-label fw-bold"><i class="fas fa-graduation-cap"></i>  Category:</label>
-            <input class="form-control border-primary shadow-sm rounded-pill" type="text" [(ngModel)]="medicine.medicineType"
+            <input class="form-control border-primary shadow-sm rounded-pill" type="text" [(ngModel)]="medicine.category"
                 name="medicineType" required />
         </div>
        
   
           <div class="mb-3">
               <label for="stock" class="form-label fw-bold"> Stock:</label>
-              <input type="text" id="stock" [(ngModel)]="medicine.medicineManufacturer" name="stock" required class="form-control"
+              <input type="text" id="stock" [(ngModel)]="medicine.stock" name="stock" required class="form-control"
                 placeholder="Enter Stock" />
             </div>
 
             <div class="mb-3">
                 <label for="manufacturer" class="form-label fw-bold"> Manufacturer:</label>
-                <input type="text" id="manufacturer" [(ngModel)]="medicine.medicineManufacturer" name="manufacturer" required class="form-control"
+                <input type="text" id="manufacturer" [(ngModel)]="medicine.manufacturer" name="manufacturer" required class="form-control"
                   placeholder="Enter Manufacturer" />
               </div>
 
             <div class="mb-3">
                 <label class="form-label fw-bold"><i class="fas fa-graduation-cap"></i>  Expiry Date:</label>
-                <input class="form-control border-primary shadow-sm rounded-pill" type="date" [(ngModel)]="medicine.medicineExpiryDate"
+                <input class="form-control border-primary shadow-sm rounded-pill" type="date" [(ngModel)]="medicine.expirationDate"
                     name=" medicineExpiryDate" required />
             </div>
   
@@ -75,7 +76,7 @@
   
           <div class="mb-3">
             <label for="imageUrl" class="form-label fw-bold"> Medicine Image URL:</label>
-            <input type="text" id="imageUrl" [(ngModel)]="medicine.imageUrl" name="imageUrl" required class="form-control"
+            <input type="text" id="imageUrl" [(ngModel)]="medicine.image" name="imageUrl" required class="form-control"
               placeholder="Enter image URL" />
           </div>
   
@@ -111,14 +112,14 @@
         <tbody>
           <tr *ngFor="let medicine of medicines; let i = index">
             <td>{{i+1}}</td>
-            <td>{{ medicine.medicineName }}</td>
-            <td>{{ medicine.medicineType }}</td>
-            <td>{{ medicine.medicineManufacturer }}</td>
-            <td>{{ medicine.medicineStock }}</td>
-            <td>{{ medicine.medicineExpiryDate }}</td>
+            <td>{{ medicine.name }}</td>
+            <td>{{ medicine.category }}</td>
+            <td>{{ medicine.manufacturer }}</td>
+            <td>{{ medicine.stock }}</td>
+            <td>{{ medicine.expirationDate }}</td>
             <td>${{ medicine.price }}</td>
             <td>
-              <img *ngIf="medicine.imageUrl; else noImage" [src]="medicine.imageUrl" alt="Medicine's Image" class="img-thumbnail" width="60" height="60" />
+              <img *ngIf="medicine.image; else noImage" [src]="medicine.image" alt="Medicine's Image" class="img-thumbnail" width="60" height="60" />
               <ng-template #noImage>
                 <span class="text-muted">No Image</span>
               </ng-template>

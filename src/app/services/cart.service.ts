@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Writer } from '../app.component';
+import { Medicine } from '../models/medicine';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class CartService {
     return this.items;
   }
 
-  addToCart(writer: Writer) {
-    this.items.push({ ...writer, quantity: 1 });
+  addToCart(medicine: Writer) {
+    this.items.push({ ...medicine, quantity: 1 });
     localStorage.setItem('cartItems', JSON.stringify(this.items));
   }
 
@@ -41,7 +42,30 @@ export class CartService {
     localStorage.setItem('cartItems', JSON.stringify(this.items));
   }
 
-  getTotalPrice() {
-    return this.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-  }
+  // getTotalPrice() {
+  //   return this.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  // }
+
+
+
+  //  course: Course[] = [];
+
+
+
+  // ngOnInit(): void {
+
+  //   let allCourse = JSON.parse(localStorage.getItem('courses') || '[]');
+  //   this.course = allCourse;
+
+
+  // }
+
+  // constructor(private router: Router, private courseService: CourseService) {}
+
+  // ngOnInit(): void {
+  //   this.courseService.getCourses().subscribe((data) => {
+  //     this.course = data;
+  //   });
+  // }
+
 }

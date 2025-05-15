@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DoctorDashboardComponent } from "../doctor-dashboard/doctor-dashboard.component";
 
 @Component({
   selector: 'app-generate-prescription',
