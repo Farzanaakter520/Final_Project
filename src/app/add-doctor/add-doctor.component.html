@@ -1,77 +1,4 @@
-<!-- <app-navbar></app-navbar>
-<div class="row">
-  <div class="col-2">
-      <app-sidebar></app-sidebar>
-  </div>
-
-  <div class="col-10">
-
-  
-
-<div class="container">
-  <h1 style="text-align: center;background-color: rgb(201, 211, 238);">Doctor Registration</h1>
-  
-<form (ngSubmit)= "onSubmit()">
-  <fieldset>
-  <div class="mb-3">
-      <label for="doctor_name">Doctor Name:</label><br>
-      <input type="text" class="form-control" id="patient_name" name="doctor_name" [(ngModel)]="doctors.name" placeholder="Doctor Name">
-  </div>
-  <div class="mb-3">
-    <label for="age">Specialty :</label><br>
-    <input type="specialty"  class="form-control" id="specialty" name="specialty" [(ngModel)]="doctors.specialty" placeholder="Age">
-</div>
- <div class="mb-3">
-      <label for="age">Age :</label><br>
-      <input type="number"  class="form-control" id="age" name="age" [(ngModel)]="doctors.age" placeholder="Age">
-  </div>
-  <div class="mb-3">
-    <label for="gender">Gender:</label><br>
-    <div class="form-check form-check-inline">
-      <input type="radio" class="form-check-input" id="male" name="gender" [(ngModel)]="doctors.gender" value="Male"/>
-      <label class="form-check-label" for="male">Male</label>
-    </div>
-
-    <div class="form-check form-check-inline">
-      <input type="radio" class="form-check-input"id="female" name="gender"[(ngModel)]="doctors.gender"value="Female"/>
-      <label class="form-check-label" for="female">Female</label>
-    </div>
-  </div>
-  
-  <div class="mb-3">
-      <label for="blood_group">Blood Group:</label><br>
-      <input type="text" class="form-control" id="blood_group" name="blood_group" [(ngModel)]="doctors.bloodGroup" placeholder="Blood Group">
-
-  </div>
-  <div class="mb-3">
-      <label for="address">Address:</label><br>
-      <input type="text" class="form-control" id="address" name="address" [(ngModel)]="doctors.address" placeholder="Address">
-
-  </div>
-  <div class="mb-3">
-      <label for="phone">Phone:</label><br>
-      <input type="string" class="form-control" id="phone" name="phone" [(ngModel)]="doctors.phone" placeholder="Phone">
-
-  </div>
-  <div class="mb-3">
-      <label for="email">Email:</label><br>
-      <input type="text" class="form-control" id="email" name="email" [(ngModel)]="doctors.email" placeholder="Email">
-
-  </div>
-  <div class="mb-3">
-    <label for="joining_date">Joining Date :</label><br>
-    <input type="joining_date" class="form-control" id="joining_date" name="joining_date"  [(ngModel)]="doctors.date" placeholder="Date">
-</div>
-
-  <button type="submit" class="btn btn-primary">{{ isUpdate? 'Edit' : 'ADD' }}</button>
-</fieldset>
-</form>
-</div>
-</div>
-</div> -->
-
-<div class="row p-2">
-  <!-- Form Section -->
+ <div class="row p-2">
   <div class="col-md-5">
     <h1 class="form-title text-primary text-center"> Add Doctor</h1>
     <div class="container shadow-lg p-4 bg-white rounded">
@@ -83,12 +10,7 @@
             class="form-control" placeholder="Enter doctor's name" />
         </div>
 
-        <!-- Book Name -->
-        <!-- <div class="mb-3">
-          <label for="bookName" class="form-label"> Book Name:</label>
-          <input type="text" id="bookName" [(ngModel)]="writer.bookName" name="bookName" required class="form-control"
-            placeholder="Enter book name" />
-        </div> -->
+       
 
         <div class="mb-3">
           <label class="form-label fw-bold"><i class="fas fa-stethoscope"></i> Department:</label>
@@ -110,28 +32,13 @@
               <option value="Oncologists"> Oncologists</option>
           </select>
       </div>
-      <!-- <div class="mb-3">
-          <label class="form-label fw-bold"><i class="fas fa-dollar-sign"></i> 💰 Fee:</label>
-          <input class="form-control border-primary shadow-sm rounded-pill" type="number" [(ngModel)]="writer.writerFee"
-              name="writerFee" required />
-      </div> -->
+    
       <div class="mb-3">
           <label class="form-label fw-bold"><i class="fas fa-graduation-cap"></i>  Degree:</label>
           <input class="form-control border-primary shadow-sm rounded-pill" type="text" [(ngModel)]="writer.writerDegree"
               name="writerDegree" required />
       </div>
-      <!-- <div class="mb-3">
-          <label class="form-label fw-bold"><i class="fas fa-check-circle"></i> ✅ Availability:</label><br>
-          <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" [(ngModel)]="writer.isAvailable" name="isAvailable"
-                  [value]="true" />
-              <label class="form-check-label text-primary">✔️ Available</label>
-          </div>
-          <div class="form-check form-check-inline">
-              <input class="form-check-input" type="radio" [(ngModel)]="writer.isAvailable" name="isAvailable"
-                  [value]="false" />
-              <label class="form-check-label text-danger">❌ Not Available</label>
-          </div> -->
+     
 
         <div class="mb-3">
             <label for="bookName" class="form-label fw-bold"> Address:</label>
@@ -139,7 +46,6 @@
               placeholder="Enter Address" />
           </div>
 
-        <!-- Price -->
         <div class="mb-3">
           <label for="price" class="form-label fw-bold"> Fee:</label>
           <input type="number" id="price" [(ngModel)]="writer.price" name="price" required min="1"
@@ -152,7 +58,6 @@
             placeholder="Enter image URL" />
         </div>
 
-        <!-- Submit Button -->
         <div class="d-grid">
           <button type="submit" class="btn btn-primary">
             {{ isUpdate ? ' Update ' : 'Add ' }}
@@ -163,7 +68,6 @@
   </div>
 
 
-<!-- Table Section -->
 <div class="col-md-7">
   <h3 class="form-title text-primary text-center"> List Of Doctors</h3>
   <div class="container">
@@ -173,7 +77,6 @@
           <th>ID</th>
           <th> Doctor name</th>
           <th> Department</th>
-          <!-- <th> Fee</th> -->
           <th> Degree</th>
           <th> Address</th>
           <th> Price</th>
@@ -186,7 +89,6 @@
           <td>{{i+1}}</td>
           <td>{{ writer.writerName }}</td>
           <td>{{ writer.writerDept }}</td>
-          <!-- <td>{{ writer.writerFee }}</td> -->
           <td>{{ writer.writerDegree }}</td>
           <td>{{ writer.bookName }}</td>
           <td>${{ writer.price }}</td>
@@ -206,8 +108,9 @@
     </table>
 
     <div *ngIf="writers.length === 0" class="alert alert-warning text-center mt-3">
-      <!-- 📌 No books have been added yet. Start by adding a new book! -->
     </div>
   </div>
 </div>
-</div>
+</div> 
+
+

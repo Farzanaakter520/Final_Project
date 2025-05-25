@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class UserService {
 
   private baseUrl = 'http://localhost:8081';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /**
    * Registers a new user.
@@ -43,6 +44,59 @@ export class UserService {
     console.error(errorMessage);
     return throwError(() => new Error(errorMessage)); // Use throwError
   }
+
+
+
+  private apiUrl = 'http://localhost:8081/api/users';
+
+
+  // Get all users
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
+  }
+
+  getCurrentUser(): Observable<any> {
+
+    const userId = Number(localStorage.getItem('id'));
+    return this.http.get<any>(`${this.apiUrl}/${userId}`);
+  }
+
+
+  // Create a new user
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
+  }
+
+  // Update a user
+  fetchUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
+
+  updateUser(id: number, user: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}/${id}`, user);
+  }
+
+  updateProfile(id: number, user: User): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, user);
+  }
+
+
+
+  // Delete a user
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  getUserByRole(role: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/role`, {
+      params: { role }
+    });
+  }
+
+  changePassword(data: { currentPassword: string; newPassword: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/change-password`, data);
+  }
+
 }
 
 export interface RegisterRequest {
@@ -60,3 +114,5 @@ interface UserResponse {
   name?: string;
   phoneNumber?: string;
 }
+
+

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Writer } from '../app.component';
+import {  Writer } from '../app.component';
 import { Medicine } from '../models/medicine';
 
 @Injectable({

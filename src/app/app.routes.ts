@@ -26,6 +26,10 @@ import { authGuard } from './core/auth.guard';
 import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreatePrescriptionComponent } from './doctor-dashboard/create-prescription/create-prescription.component';
+import { PrescriptionListComponent } from './doctor-dashboard/prescription-list/prescription-list.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { DoctorComponent } from './doctor/doctor.component';
 
 
 
@@ -57,6 +61,10 @@ export const routes: Routes = [
    { path: 'medicine-form', component: MedicineFormComponent },
    { path: 'register', component: RegistrationComponent },
    { path: 'create-prescription', component: CreatePrescriptionComponent },
+   { path: 'list-prescription', component: PrescriptionListComponent },
+   { path: 'user-list', component: UserListComponent },
+   { path: 'add-user', component: AddUserComponent },
+   {path: 'doctor-card', component: DoctorComponent},
 
    { path: '', component: NavbarComponent, canActivate: [authGuard], }
 

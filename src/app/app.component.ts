@@ -58,7 +58,7 @@ export class AppComponent {
   }
 
   export class Doctor {
-    id: string;
+    doctor_id: number;
     name: string;
     specialty: string;
     age: number;
@@ -68,18 +68,23 @@ export class AppComponent {
     phone: string;
     email: string;
     date: string;
+    department: string;
+    imageUrl: string;
 
-    constructor(id: string, name: string, specialty: string, age: number, gender: string, bloodGroup: string, address: string, phone: string, email: string, date: string) {
-        this.id = id;
-        this.name = name;
-        this.specialty = specialty;
-        this.age = age;
-        this.gender = gender;
-        this.bloodGroup = bloodGroup;
-        this.address = address;
-        this.phone = phone;
-        this.email = email;
-        this.date = date;
+    constructor() {
+        this.doctor_id = 0;
+        this.name = '';
+        this.specialty = '';
+        this.age = 0;
+        this.gender = '';
+        this.bloodGroup = '';
+        this.address = '';
+        this.phone = '';
+        this.email = '';
+        this.date = '';
+        this.department = '';
+        this.imageUrl = '';
+        
     }
   }
 
@@ -137,31 +142,31 @@ export class AppComponent {
   //   this.imageUrl = imageUrl;
   // }
   }
-  export class Doctors{
-    doctorId: number;
-    doctorName: string;
-    doctorDept: string;
-    doctorFee: number;
-    doctorDegree: string;
-    isAvailable: boolean;
+  // export class Doctors{
+  //   doctorId: number;
+  //   doctorName: string;
+  //   doctorDept: string;
+  //   doctorFee: number;
+  //   doctorDegree: string;
+  //   isAvailable: boolean;
   
   
-    constructor(
-      doctorId: number,
-    doctorName: string,
-    doctorDept: string,
-    doctorFee: number,
-    doctorDegree: string,
-    isAvailable: boolean
-    ){
-      this.doctorId = doctorId;
-      this.doctorName = doctorName;
-      this.doctorDept = doctorDept;
-      this.doctorFee = doctorFee;
-      this.doctorDegree = doctorDegree;
-      this.isAvailable = isAvailable;
-    }
-  }
+  //   constructor(
+  //     doctorId: number,
+  //   doctorName: string,
+  //   doctorDept: string,
+  //   doctorFee: number,
+  //   doctorDegree: string,
+  //   isAvailable: boolean
+  //   ){
+  //     this.doctorId = doctorId;
+  //     this.doctorName = doctorName;
+  //     this.doctorDept = doctorDept;
+  //     this.doctorFee = doctorFee;
+  //     this.doctorDegree = doctorDegree;
+  //     this.isAvailable = isAvailable;
+  //   }
+  // }
   
   export class Catagory {
     id: number;

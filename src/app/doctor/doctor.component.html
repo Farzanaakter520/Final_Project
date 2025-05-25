@@ -1,0 +1,27 @@
+<div class="doctor">
+    <h1 class="form-title text-primary text-center mb-4"> All Doctor's </h1>
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4" *ngFor="let doc of doctor">
+            <div class="card shadow-lg rounded-4">
+
+                <img [src]="doc.imageUrl" class="card-img-top img-fluid doctor-image" alt="Doctor Image">
+
+                <div class="card-body text-center">
+
+                    <h5 class="card-title fw-bold text-primary">{{ doc.name }}</h5>
+
+                    <p class="card-text text-muted">✍️ {{ doc.specialty }}</p>
+
+                    <!-- <p class="card-text text-success">💲 <strong>Price:</strong> ${{ doctor.price }}</p> -->
+
+                    <!-- View details Button -->
+                    <div class="button-container">
+                        <a href="/addAppointment" class="btn btn-success shadow-sm fw-bold "> Make Appointment</a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
