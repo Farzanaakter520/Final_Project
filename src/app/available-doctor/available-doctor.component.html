@@ -1,30 +1,60 @@
-<div class="container mt-4">
+<app-navbar></app-navbar>
+<div class="doctor">
+    <h1 class="form-title text-primary text-center mb-4"> Available Doctor's </h1>
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4" *ngFor="let doc of doctor">
+            <div class="card shadow-lg rounded-4">
+
+                <img [src]="doc.avatarUrl" class="card-img-top img-fluid doctor-image" alt="Doctor Image"
+                    style="width: 250px; height: 250px; margin: auto;">
+
+                <div class="card-body text-center">
+
+                    <h5 class="card-title fw-bold text-primary">Doctor Name: {{ doc.name }}</h5>
+
+                    <p class="card-text text-muted">✍️Speciality: {{ doc.speciality }}</p>
+
+                    <!-- <p class="card-text text-success">💲 <strong>Price:</strong> ${{ doctor.price }}</p> -->
+
+                    <!-- View details Button -->
+                    <div class="button-container">
+                        <!-- <a href="/addAppointment"  class="btn btn-success shadow-sm fw-bold "> Make Appointment</a> -->
+                        <button  (click)="makeAppointment(doc)" class="btn btn-success shadow-sm fw-bold "> Make Appointment</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container mt-4">
     <h1 class="form-title text-primary text-center mb-4"> Doctor's </h1>
     <div class="row mt-4">
         <div class="col-md-4 mb-4" *ngFor="let writer of writerBooks">
-            <div class="card shadow-lg rounded-4">
-                <!-- Book Image -->
-                <img [src]="writer.imageUrl" class="card-img-top img-fluid book-image" style="width: 450px; height: 250px;" alt="Doctor Image">
+            <div class="card shadow-lg rounded-4"> -->
+<!-- Book Image -->
+<!-- <img [src]="writer.imageUrl" class="card-img-top img-fluid book-image" style="width: 450px; height: 250px;" alt="Doctor Image">
 
-                <div class="card-body text-center">
-                    <!-- Book Name -->
-                    <!-- <h5 class="card-title fw-bold text-primary">{{ writer.writerName }}</h5> -->
+                <div class="card-body text-center"> -->
+<!-- Book Name -->
+<!-- <h5 class="card-title fw-bold text-primary">{{ writer.writerName }}</h5> -->
 
-                    <!-- Writer Name -->
-                    <p class="card-text text-muted"> <strong>Doctor Name:</strong> {{ writer.writerName }}</p>
+<!-- Writer Name -->
+<!-- <p class="card-text text-muted"> <strong>Doctor Name:</strong> {{ writer.writerName }}</p> -->
 
-                    <!-- Book Price -->
-                    <!-- <p class="card-text text-success">💲 <strong>Price:</strong> ${{ writer.price }}</p> -->
+<!-- Book Price -->
+<!-- <p class="card-text text-success">💲 <strong>Price:</strong> ${{ writer.price }}</p> -->
 
-                    <p class="card-text text-muted"> <strong>Department:</strong> {{ writer.writerDept }}</p>
+<!-- <p class="card-text text-muted"> <strong>Department:</strong> {{ writer.writerDept }}</p>
 
-                    <p class="card-text text-success">💲 <strong>Fee :</strong> ${{ writer.price }}</p>
+                    <p class="card-text text-success">💲 <strong>Fee :</strong> ${{ writer.price }}</p> -->
 
-                    <!-- Add to Cart Button -->
-                    <!-- <button class="btn btn-warning shadow-sm fw-bold" (click)="addToCart(writer)">
+<!-- Add to Cart Button -->
+<!-- <button class="btn btn-warning shadow-sm fw-bold" (click)="addToCart(writer)">
                         Make Appointment
                     </button> -->
-                    <div class="d-flex gap-2">
+<!-- <div class="d-flex gap-2">
                         <a href="http:/addAppointment" class="btn btn-primary">Make Appointment</a>
                         <a href="#" class="btn btn-success">Details</a>
                       </div>
@@ -32,4 +62,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

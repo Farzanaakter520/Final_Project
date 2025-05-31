@@ -21,7 +21,6 @@ export class UserListComponent {
     });
   }
 
-
   saveUser() {
     this.userService.getUsers().subscribe((data) => {
       this.users = data;
@@ -43,8 +42,6 @@ export class UserListComponent {
       alert('Id is Invalid?');
     }
   }
-
-
 
   addNewUser(): void {
     this.router.navigate(['/add-user'], { state: { users: new User() } });

@@ -13,7 +13,7 @@
 
             <fieldset>
                 <h1>{{ isUpdate ? "Edit User" : "Add User" }}</h1>
-                <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+                <form (ngSubmit)="onSubmit()" #userForm="ngForm">
                     <input type="hidden" name="id" [(ngModel)]="users.id" hidden /><br />
 
                     <label for="role">Role</label>
@@ -42,7 +42,11 @@
                     <input type="number" [(ngModel)]="users.age" name="age" required /><br />
 
                     <label for="gender">Gender:</label><br />
-                    <input type="text" [(ngModel)]="users.gender" name="gender" required /><br />
+                    <select name="gender" id="gender" [(ngModel)]="users.gender" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select><br />
+
 
                     <label for="dob">Date Of Birth:</label><br />
                     <input type="text" [(ngModel)]="users.dob" name="dob" required /><br />
@@ -57,11 +61,11 @@
                     <input type="text" [(ngModel)]="users.speciality" name="speciality" required /><br />
 
 
-                    <!-- <label for="bloodGroup">Blood Group:</label><br />
-                    <input type="text" [(ngModel)]="users.bloodGroup" name="bloodGroup" required /><br /> -->
+                    <label for="bloodGroup">Blood Group:</label><br />
+                    <input type="text" [(ngModel)]="users.bloodGroup" name="bloodGroup" required /><br />
 
                     <label for="image">UserImage</label><br />
-                    <input type="text" name="image" [(ngModel)]="users.avatarUrl" required /><br />
+                    <input type="text" name="avatarUrl" [(ngModel)]="users.avatarUrl" required /><br />
 
                     <button type="submit" class="btn btn-success">
                         {{ isUpdate ? "Update" : "Add" }}

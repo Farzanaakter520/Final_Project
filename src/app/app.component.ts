@@ -39,28 +39,12 @@ export class AppComponent {
     }
   }
 
-  export class Appointment {
-    id: number;
-    name: string;
-    email: string;
-    appointmentDate: string;
-    doctorId: number;
-    patientId: number;
-
-    constructor(id: number, name: string, email: string, appointmentDate: string, doctorId: number, patientId: number) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.appointmentDate = appointmentDate;
-        this.doctorId = doctorId;
-        this.patientId = patientId;
-    }
-  }
+ 
 
   export class Doctor {
-    doctor_id: number;
+    doctorId: number;
     name: string;
-    specialty: string;
+    speciality: string;
     age: number;
     gender: string;
     bloodGroup: string;
@@ -69,12 +53,12 @@ export class AppComponent {
     email: string;
     date: string;
     department: string;
-    imageUrl: string;
+    avatarUrl: string;
 
     constructor() {
-        this.doctor_id = 0;
+        this.doctorId = 0;
         this.name = '';
-        this.specialty = '';
+        this.speciality = '';
         this.age = 0;
         this.gender = '';
         this.bloodGroup = '';
@@ -83,7 +67,7 @@ export class AppComponent {
         this.email = '';
         this.date = '';
         this.department = '';
-        this.imageUrl = '';
+        this.avatarUrl = '';
         
     }
   }

@@ -1,36 +1,34 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GetUserInfo } from '../../models/class';
+import { User } from '../../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProfileService {
 
-  private getUserURL = 'http://localhost:8081/api/user/info';
-  
+  private apiUrl = 'http://localhost:8081/api/users';
 
   constructor(private http: HttpClient) { }
 
+  getUserInfo(): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/me`);
+  }
 
- getUserInfo(): Observable<GetUserInfo> {
-  const userId = localStorage.getItem('id');
-  const safeUserId = userId ?? ''; // fallback to empty string if null
-  const params = new HttpParams().set('userId', safeUserId);
+  changePassword(data: { currentPassword: string; newPassword: string }): Observable<any> {
+    return this.http.put('http://localhost:8081/api/users/change-password', data);
+  }
 
-  return this.http.get<GetUserInfo>('http://localhost:8081/api/user/info', { params });
+  editUserInfo(data: { name: string; phone: string }): Observable<any> {
+    return this.http.put('http://localhost:8081/api/users/edit', data);
+  }
+
+
 }
 
-changePassword(data: { userId: number; currentPassword: string; newPassword: string }){
-  return this.http.put('http://localhost:8081/api/user/change-password', data);
-}
 
-
-editUserInfo(data: { userId: number; name: string; phone: string }) {
-  return this.http.put('http://localhost:8081/api/user/edit', data, {
-    responseType: 'text' as 'json'
-  });
-}
-
+export interface PasswordChangeRequest {
+  currentPassword: string;
+  newPassword: string;
 }

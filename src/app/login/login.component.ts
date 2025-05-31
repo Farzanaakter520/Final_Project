@@ -42,7 +42,6 @@ export class LoginComponent {
       next: (res) => {
         // Set token
         this.auth.setToken(res.access_token);
-
         const role = this.auth.getUserRole();
 
         // Role-based navigation

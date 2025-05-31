@@ -1,49 +1,129 @@
 <app-navbar></app-navbar>
-<!-- <div *ngIf="showForm" class="mt-3">
-    <h3>Doctor Appointment</h3>
-    <form  [formGroup]="appointmentForm"(ngSubmit)="submitAppointment()">
-      <div class="mb-3">
-        <label for="name" class="form-label">Your Name</label>
-        <input type="text" class="form-control" id="name" formControlName="name">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email">
-      </div>
-      <div class="mb-3">
-        <label for="date" class="form-label">Appointment Date</label>
-        <input type="date" class="form-control" id="date" formControlName="date">
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </div> -->
-  
 
-  <div class="container">
-    <fieldset>
-    <h1 style="text-align: center;background-color: rgb(201, 211, 238);">{{ isEditMode ? "Edit Appointment" : "Add Appointment" }}</h1>
+
+<!-- Appointment Form -->
+<div class="appointment-form card">
+  <h3>{{ isUpdate ? "Update" : "Create" }} Appointment</h3>
+
+  <form (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+    <!-- Doctor Display (Read-Only) -->
+    <div class="form-group">
+      <label>Doctor:</label>
+
+      <!-- Show doctor info if available -->
+      <div *ngIf="doctor; else noDoctor">
+        <input type="text" [value]="'Dr. ' + doctor.name" class="form-control" disabled />
+        <input type="hidden" name="doctorId" [ngModel]="appointment.doctorId" />
+      </div>
+
+      <!-- Fallback if doctor is missing -->
+      <ng-template #noDoctor>
+        <div class="alert alert-warning">
+          Please select a doctor from home page to book an appointment.
+        </div>
+      </ng-template>
+    </div>
+
+
+    <!-- Scheduled Time -->
+    <div class="form-group">
+      <label for="scheduledTime">Scheduled Time:</label>
+      <input id="scheduledTime" type="datetime-local" [(ngModel)]="appointment.scheduledTime" name="scheduledTime"
+        required />
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <button class="btn create" type="submit" [disabled]="!appointmentForm.form.valid">
+        {{ isUpdate ? "Update" : "Create" }} Appointment
+      </button>
+      <button class="btn cancel" type="button" (click)="resetForm()">Cancel</button>
+    </div>
+  </form>
+
+</div>
+
+<!-- Appointment List -->
+<div class="appointment-list card">
+  <h2>Appointments</h2>
+
+  <ul>
+    <li *ngFor="let appointment of appointments" class="appointment-item">
+      <p>
+        <strong>ID:</strong> {{ appointment.id }}<br />
+        <strong>Patient ID:</strong> {{ appointment.patientId }}<br />
+        <strong>Doctor ID:</strong> {{ appointment.doctorId }}<br />
+        <strong>Scheduled Time:</strong> {{ appointment.scheduledTime }}
+      </p>
+      <div class="button-group">
+        <button class="btn edit" (click)="editAppointment(appointment)">
+          Edit
+        </button>
+        <button class="btn delete" (click)="deleteAppointment(appointment.id)">
+          Delete
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>
+<!-- 
+<div class="container">
+  <fieldset>
+    <h1 style="text-align: center;background-color: rgb(201, 211, 238);">
+      {{ isEditMode ? "Edit Appointment" : "Add Appointment" }}</h1>
+
+    <form (ngSubmit)="saveAppointment()">
+      <label for="name">Name: </label><br />
+      <input type="text" class="form-control" name="name" [(ngModel)]="appointment.name" required /><br />
+
+      <label for="doctorId">Doctor Id: </label><br>
+      <input type="text" class="form-control" name="doctorId" [(ngModel)]="appointment.doctorId" required /><br />
+
+      <label for="patientId">Patient Id: </label><br>
+      <input type="text" class="form-control" name="patientId" [(ngModel)]="appointment.patientId" required /><br />
+
+      <label for="scheduledTime">Scheduled Time: </label><br>
+      <input type="text" class="form-control" name="scheduledTime" [(ngModel)]="appointment.scheduledTime" required /><br />
+
+      <button type="submit" class="btn btn-success">{{ isEditMode ? "Update" : "Add Appointment" }}</button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()" *ngIf="isEditMode">Cancel</button>
+    </form>
+  </fieldset>
+
+  <hr />
+
+   <h2>All Appointments</h2>
+  <ul>
+    <li *ngFor="let appt of appointments">
+      Name: {{ appt.name }}, Doctor ID: {{ appt.doctorId }}, Patient ID: {{ appt.patientId }}, Scheduled Time: {{ appt.scheduledTime }}
+      <button (click)="editAppointment(appt)" class="btn btn-sm btn-primary">Edit</button>
+      <button (click)="deleteAppointment(appt.id)" class="btn btn-sm btn-danger">Delete</button>
+    </li>
+  </ul>
+</div> -->
+
+
+<!-- <div class="container">
+  <fieldset>
+    <h1 style="text-align: center;background-color: rgb(201, 211, 238);">
+      {{ isEditMode ? "Edit Appointment" : "AddAppointment" }}</h1>
     <form (ngSubmit)="saveAppointment()">
       <label for="name">Name: </label><br />
       <input type="text" class="form-control" name="name" [(ngModel)]="appointments.name" required /><br />
 
-      <label for="email">Email:</label><br />
-      <input type="text" class="form-control" name="email" [(ngModel)]="appointments.email" required /><br />
-  
-     <label for="appointmentDate">Appointment Date: </label><br>
-     <input type="text" class="form-control" name="startDate" [(ngModel)]="appointments.appointmentDate" required /><br />
+      <label for="doctorId">Doctor Id: </label><br>
+      <input type="text" class="form-control" name="doctorId" [(ngModel)]="appointments.doctorId" required /><br />
 
-     <label for="doctorId">Doctor Id: </label><br>
-     <input type="text" class="form-control" name="doctorId" [(ngModel)]="appointments.doctorId" required /><br />
+      <label for="patientId">Patient Id: </label><br>
+      <input type="text" class="form-control" name="patientId" [(ngModel)]="appointments.patientId" required /><br />
 
-     <label for="patientId">Patient Id: </label><br>
-     <input type="text" class="form-control" name="patientId" [(ngModel)]="appointments.patientId" required /><br />
+      <label for="scheduledTime">Scheduled Time: </label><br>
+      <input type="text" class="form-control" name="patientId" [(ngModel)]="appointments.scheduledTime"
+        required /><br />
 
 
       <button type="submit" class="btn btn-success">{{ isEditMode ? "Update" : "Add Appointment" }}</button>
-      
+
     </form>
   </fieldset>
-  </div>
-
-  
-  
+</div> -->

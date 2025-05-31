@@ -1,18 +1,141 @@
-.container {
-    background-image: url('https://wallpapercave.com/wp/wp2655106.jpg'); /* Replace with your image URL */
-    background-size: cover; /* Ensures the image covers the entire container */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents repeating */
-    padding: 20px; /* Adds some spacing inside the container */
-    border-radius: 10px; /* Rounds the corners */
-    
-  }
-  
-  h1 {
-    background-color: rgba(224, 219, 224, 0.8); /* Adds transparency to the background */
-    padding: 10px;
-    border-radius: 5px;
+/* Card layout for forms and lists */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+}
+
+/* Header styles */
+h2, h3 {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #4facfe;
+  outline: none;
+}
+
+/* Alert box style */
+.alert {
+  padding: 10px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #856404;
+}
+
+/* Button styles */
+.button-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn.create {
+  background-color: #28a745;
+}
+
+.btn.cancel {
+  background-color: #dc3545;
+}
+
+.btn.edit {
+  background-color: #44cb83;
+}
+
+.btn.delete {
+  background-color: #e91e63;
+}
+
+.btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Appointment List Styles */
+.appointment-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.appointment-item {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafafa;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.appointment-item p {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+    margin: 20px;
   }
 
-  
-  
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="datetime-local"] {
+    font-size: 16px;
+  }
+}

@@ -58,6 +58,7 @@ export class UserService {
   getCurrentUser(): Observable<any> {
 
     const userId = Number(localStorage.getItem('id'));
+    console.log(userId)
     return this.http.get<any>(`${this.apiUrl}/${userId}`);
   }
 
@@ -89,6 +90,12 @@ export class UserService {
 
   getUserByRole(role: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/role`, {
+      params: { role }
+    });
+  }
+
+  getUserByRolePublic(role: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/public/role`, {
       params: { role }
     });
   }

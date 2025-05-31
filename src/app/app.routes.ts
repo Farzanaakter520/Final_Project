@@ -6,8 +6,7 @@ import { AboutComponent } from './about/about.component';
 import { DepartmentComponent } from './department/department.component';
 import { ServicesComponent } from './services/services.component';
 import { AppointmentFormComponent } from './appointment-form/appointment-form.component';
-import { AppointmentListComponent } from './appointment-list/appointment-list.component';
-import { AdminComponent } from './admin/admin.component';
+// import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { ContactComponent } from './contact/contact.component';
 import { PharmacyComponent } from './pharmacy/pharmacy.component';
 import { LoginComponent } from './login/login.component';
@@ -29,7 +28,10 @@ import { CreatePrescriptionComponent } from './doctor-dashboard/create-prescript
 import { PrescriptionListComponent } from './doctor-dashboard/prescription-list/prescription-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
-import { DoctorComponent } from './doctor/doctor.component';
+import { ProfileComponent } from './profile/profile.component';
+import { GeneratePrescriptionComponent } from './generate-prescription/generate-prescription.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+// import { DoctorComponent } from './doctor/doctor.component';
 
 
 
@@ -44,8 +46,8 @@ export const routes: Routes = [
    //    {path:'doctors', component: DoctorsComponent},
    { path: 'services', component: ServicesComponent },
    { path: 'addAppointment', component: AppointmentFormComponent },
-   { path: 'appointmentList', component: AppointmentListComponent },
-   { path: 'admin', component: AdminComponent },
+   // { path: 'appointmentList', component: AppointmentListComponent },
+   { path: 'admin', component: SidebarComponent },
    { path: 'contact', component: ContactComponent },
    { path: 'pharmacy', component: PharmacyComponent },
    { path: 'login', component: LoginComponent },
@@ -64,7 +66,9 @@ export const routes: Routes = [
    { path: 'list-prescription', component: PrescriptionListComponent },
    { path: 'user-list', component: UserListComponent },
    { path: 'add-user', component: AddUserComponent },
-   {path: 'doctor-card', component: DoctorComponent},
+   // { path: 'doctor-card', component: DoctorComponent },
+   {path: 'generate-prescription', component: GeneratePrescriptionComponent},
+   {path:'profile', component: ProfileComponent},
 
    { path: '', component: NavbarComponent, canActivate: [authGuard], }
 

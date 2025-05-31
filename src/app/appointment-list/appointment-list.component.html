@@ -1,47 +1,85 @@
-<app-navbar></app-navbar>
+ <!-- <app-navbar></app-navbar>
 
-<div class="row">
+
+ <form (ngSubmit)="submitAppointment()">
+  <label>
+    Patient Name:
+    <input formControlName="patientName" />
+  </label>
+  <br />
+  <label>
+    Doctor Name:
+    <input formControlName="doctorName" />
+  </label>
+  <br />
+  <label>
+    Scheduled Time:
+    <input type="datetime-local" formControlName="scheduledTime" />
+  </label>
+  <br />
+  <button type="submit">Add Appointment</button>
+</form>
+
+<hr />
+
+<table  *ngIf="appointments.length > 0">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Patient</th>
+      <th>Doctor</th>
+      <th>Scheduled Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.id }}</td>
+      <td>{{ appointment.patient.name }}</td>
+      <td>{{ appointment.doctor.name }}</td>
+      <td>{{ appointment.scheduledTime }}</td>
+    </tr>
+  </tbody>
+</table> -->
+<!--<div class="row">
   <div class="col-2">
-      <app-sidebar></app-sidebar>
+    <app-sidebar></app-sidebar>
   </div>
 
   <div class="col-10">
 
 
 
-<div class="container">
-    <h1 style="text-align: center;background-color: rgb(163, 167, 219);">Appointment List</h1>
+    <div class="container">
+      <h1 style="text-align: center;background-color: rgb(163, 167, 219);">Appointment List</h1>
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Appointment Date</th>
-          <th>Doctor Id</th>
-          <th>Patient Id</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for(appointment of appointments; track appointment.id){
-            <tr>
-              <td>{{appointments.indexOf (appointment) + 1}}</td>
-              <td>{{appointment.name}}</td>
-              <td>{{appointment.email}}</td>
-              <td>{{appointment.appointmentDate}}</td>
-              <td>{{appointment.doctorId}}</td>
-              <td>{{appointment.patientId}}</td>
-              <td>
-                <button type="button" class="btn btn-success" (click)="editAppointment(appointment)">Edit</button>
-                        <button type="button" class="btn btn-warning" (click)="deleteAppointment(appointment)">Delete</button>
-              </td>
-            </tr>
-        }
-    </table>
-    
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Doctor Id</th>
+            <th>Patient Id</th>
+            <th>Scheduled Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(appointment of appointments; track appointment.id){
+          <tr>
+            <td>{{appointments.indexOf (appointment) + 1}}</td>
+            <td>{{appointment.name}}</td>
+            <td>{{appointment.doctorId}}</td>
+            <td>{{appointment.patientId}}</td>
+            <td>{{appointment.scheduledTime}}</td>
+
+            <td>
+              <button type="button" class="btn btn-success" (click)="editAppointment(appointment)">Edit</button>
+              <button type="button" class="btn btn-warning" (click)="deleteAppointment(appointment)">Delete</button>
+            </td>
+          </tr>
+          }
+      </table>
+
+    </div>
   </div>
-</div>
-</div>
-
+</div> -->
