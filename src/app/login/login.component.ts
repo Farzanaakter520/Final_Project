@@ -50,7 +50,7 @@ export class LoginComponent {
             this.router.navigate(['/admin']);
             break;
           case 'doctor':
-            this.router.navigate(['/doctor-dashboard']);
+            this.router.navigate(['/doctor-dashboard']); 
             break;
           case 'patient':
             this.router.navigate(['/patient-dashboard']);

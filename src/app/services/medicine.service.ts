@@ -14,24 +14,6 @@ export class MedicineService {
 
   getMedicine(): Observable<Medicine[]> {
     return this.http.get<Medicine[]>(this.apiUrl);
-  //   .pipe(
-  //     map((data) =>
-  //       data.map((item) => {
-  //         const medicine = new Medicine();
-
-  //         medicine.medicine_id = item.id;
-  //         medicine.name = item.name;
-  //         medicine.price = item.price;
-  //         medicine.manufacturer = item.manufacturer;
-  //         medicine.category = item.category;
-  //         medicine.expirationDate = item.expirationDate;
-  //         medicine.stock = item.stock;
-  //         medicine.image = item.image;
-  //         return medicine;
-  //       })
-  //     )
-  //   );
-  // }
   }
 
   addMedicine(medicine: Medicine): Observable<Medicine> {

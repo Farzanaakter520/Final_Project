@@ -1,0 +1,78 @@
+/* Header Styling */
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Table Layout */
+form table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+form table td {
+  padding: 12px 10px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Input and Select Styling */
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border 0.2s ease-in-out;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit Button */
+form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive (for mobile) */
+@media (max-width: 600px) {
+  form table,
+  form table tr,
+  form table td {
+    display: block;
+    width: 100%;
+  }
+
+  form table td {
+    padding: 8px 0;
+  }
+
+  form table td:first-child {
+    font-weight: bold;
+  }
+}

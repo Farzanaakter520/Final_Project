@@ -24,13 +24,18 @@ import { authGuard } from './core/auth.guard';
 
 import { RegistrationComponent } from './registration/registration.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CreatePrescriptionComponent } from './doctor-dashboard/create-prescription/create-prescription.component';
-import { PrescriptionListComponent } from './doctor-dashboard/prescription-list/prescription-list.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { ProfileComponent } from './profile/profile.component';
 import { GeneratePrescriptionComponent } from './generate-prescription/generate-prescription.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { PaymentComponent } from './payment/payment.component';
+import { InventoryComponent } from './invoice/inventory/inventory.component';
+import { AddMedicineComponent } from './invoice/add-medicine/add-medicine.component';
+import { InvoiceComponent } from './invoice/invoice/invoice.component';
+import { InvoiceHistoryComponent } from './invoice/invoice-history/invoice-history.component';
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
+import { EditComponent } from './profile/edit/edit.component';
 // import { DoctorComponent } from './doctor/doctor.component';
 
 
@@ -62,13 +67,18 @@ export const routes: Routes = [
    { path: 'availableDoctor', component: AvailableDoctorComponent },
    { path: 'medicine-form', component: MedicineFormComponent },
    { path: 'register', component: RegistrationComponent },
-   { path: 'create-prescription', component: CreatePrescriptionComponent },
-   { path: 'list-prescription', component: PrescriptionListComponent },
    { path: 'user-list', component: UserListComponent },
    { path: 'add-user', component: AddUserComponent },
    // { path: 'doctor-card', component: DoctorComponent },
-   {path: 'generate-prescription', component: GeneratePrescriptionComponent},
-   {path:'profile', component: ProfileComponent},
+   { path: 'generate-prescription', component: GeneratePrescriptionComponent },
+   { path: 'profile', component: ProfileComponent },
+   { path: 'payment', component: PaymentComponent },
+   { path: 'inventory', component: InventoryComponent },
+   { path: 'addMedicine', component: AddMedicineComponent },
+   { path: 'invoice', component: InvoiceComponent },
+   { path: 'invoice-history', component: InvoiceHistoryComponent },
+   { path: 'edit', component: EditComponent },
+   { path: 'changePassword', component: ChangePasswordComponent },
 
    { path: '', component: NavbarComponent, canActivate: [authGuard], }
 

@@ -55,3 +55,46 @@ export interface GetUserInfo{
   password: string;
   role:Role;
 }
+
+export interface Doctor {
+  id: number;
+  email: string;
+  role: string;
+  name: string;
+  phoneNumber: string;
+  dob: string | null;
+  age: number | null;
+  gender: string | null;
+  speciality: string;
+  bloodGroup: string | null;
+  avatarUrl: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface Patient {
+  id: number;
+  email: string;
+  role: string;
+  name: string;
+  phoneNumber: string;
+  dob: string | null;
+  age: number | null;
+  gender: string | null;
+  speciality: string | null;
+  bloodGroup: string | null;
+  avatarUrl: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PrescriptionReceived {
+  prescriptionId: number;
+  doctor: Doctor;
+  patient: Patient;
+  medicines: string;
+  patientName: string;
+  tests: string;
+  advice: string;
+  prescriptionDate: string;
+}
