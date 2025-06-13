@@ -13,14 +13,14 @@ export class PrescriptionService {
 
   constructor(private http: HttpClient) {}
 
-  // POST to /create
-  createPrescription(prescription: Prescription): Observable<Prescription> {
-    return this.http.post<Prescription>(`${this.apiUrl}/create`, prescription);
-  }
+  // // POST to /create
+  // createPrescription(prescription: Prescription): Observable<Prescription> {
+  //   return this.http.post<Prescription>(`${this.apiUrl}/create`, prescription);
+  // }
 
-  // Optional: GET all prescriptions
-  getAllPrescriptions(): Observable<PrescriptionReceived[]> {
-    return this.http.get<PrescriptionReceived[]>(this.apiUrl);
+  // // Optional: GET all prescriptions
+  getAllPrescriptions(): Observable<Prescription[]> {
+    return this.http.get<Prescription[]>(this.apiUrl);
   }
 
   // Optional: GET by ID
@@ -33,7 +33,12 @@ export class PrescriptionService {
     return this.http.put<Prescription>(`${this.apiUrl}/${id}`, updated);
   }
 
-  // Optional: DELETE
+
+
+  createPrescription(prescription: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/create`, prescription);
+  }
+
   deletePrescription(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }

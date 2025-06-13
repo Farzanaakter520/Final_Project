@@ -1,55 +1,5 @@
-<!-- <h3>Prescription Form</h3>
-<form #prescriptionForm="ngForm" (ngSubmit)="onSubmit(prescriptionForm)">
-  <table>
-    <tr>
-      <td>Prescription ID:</td>
-      <td><input type="text" name="prescriptionId" [(ngModel)]="prescription.prescriptionId" required /></td>
-    </tr>
-    <tr>
-      <td>Patient's Name:</td>
-      <td><input type="text" name="patientName" [(ngModel)]="prescription.patientName" required /></td>
-    </tr>
-    <tr>
-      <td>Doctor ID:</td>
-      <td><input type="text" name="doctorId" [(ngModel)]="prescription.doctorId" required /></td>
-    </tr>
-    <tr>
-      <td>Medicine:</td>
-      <td>
-        <div *ngFor="let med of prescription.medicines; let i = index">
-          <input type="text" placeholder="Name" [(ngModel)]="med.name" name="medicineName{{i}}" required />
-          <input type="text" placeholder="Dosage" [(ngModel)]="med.dosage" name="dosage{{i}}" required />
-          <input type="text" placeholder="Duration" [(ngModel)]="med.duration" name="duration{{i}}" required />
-          <button type="button" (click)="removeMedicine(i)">Remove</button>
-        </div>
-        <button type="button" (click)="addMedicine()">Add Medicine</button>
-      </td>
-    </tr>
-    <tr>
-      <td>Test(s):</td>
-      <td>
-        <div *ngFor="let test of prescription.tests; let j = index">
-          <input type="text" [(ngModel)]="test.name" name="test{{j}}" />
-          <button type="button" (click)="removeTest(j)">Remove</button>
-        </div>
-        <button type="button" (click)="addTest()">Add Test</button>
-      </td>
-    </tr>
-    <tr>
-      <td>Advice:</td>
-      <td><textarea name="advice" [(ngModel)]="prescription.advice" rows="3"></textarea></td>
-    </tr>
-    <tr>
-      <td>Prescription Date:</td>
-      <td><input type="date" name="date" [(ngModel)]="prescription.date" required /></td>
-    </tr>
-  </table>
-
-  <button type="submit">Save Prescription</button>
-</form> -->
-
 <app-navbar></app-navbar>
-<h3>Prescription Form</h3>
+<!-- <h3>Prescription Form</h3>
 <form #prescriptionForm="ngForm" (ngSubmit)="onSubmit(prescriptionForm)">
   <table>
     <tr>
@@ -58,13 +8,25 @@
     <tr>
       <td>Patient's Name:</td>
       <td>
-        <select name="patient" [(ngModel)]="prescription.patientName" required style="width: 100%;">
+        <select name="patientName" [(ngModel)]="prescription.patientName" required style="width: 100%;">
           <option *ngFor="let patients of patient" [value]="patients.name">
             {{ patients.id }} {{ patients.name }}
           </option>
         </select><br />
       </td>
     </tr>
+
+    <tr>
+      <td>Patient's ID:</td>
+      <td>
+        <select name="patientId" [(ngModel)]="prescription.patientId" required style="width: 100%;">
+          <option *ngFor="let patients of patient" [value]="patients.id">
+            {{ patients.id }} {{ patients.name }}
+          </option>
+        </select><br />
+      </td>
+    </tr>
+
     <tr>
       <td>Doctor Name & ID:</td>
       <td>
@@ -76,8 +38,6 @@
       </td>
     </tr>
 
-
-
     <tr>
       <td>Medicine:</td>
       <td>
@@ -105,16 +65,12 @@
       <td>Advice:</td>
       <td><textarea name="advice" [(ngModel)]="prescription.advice" rows="3"></textarea></td>
     </tr>
-    <!-- <tr>
-      <td>Prescription Date:</td>
-      <td><input type="date" name="date" [(ngModel)]="prescription.date" required /></td>
-    </tr> -->
+
   </table>
 
   <button type="submit">Save Prescription</button>
 </form>
 
-<!-- Prescription List -->
 <hr />
 <h3>Prescription List</h3>
 <table border="1" width="100%" style="margin-top: 20px;">
@@ -131,7 +87,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of prescriptions; let i = index">
+    @for (p of prescriptions; track p.prescriptionId) {
+    <tr>
       <td>{{ p.prescriptionId }}</td>
       <td>{{ p.patientName }}</td>
       <td>{{ p.doctor.id }}</td>
@@ -140,8 +97,147 @@
       <td>{{ p.tests }}</td>
       <td>{{ p.advice }}</td>
       <td>
-        <button (click)="deletePrescription(i)">Delete</button>
+        <button (click)="deletePrescription(p.prescriptionId)">Delete</button>
       </td>
     </tr>
+    }
+  </tbody>
+</table> -->
+
+
+
+
+<h3>Prescription Form</h3>
+<form #prescriptionForm="ngForm" (ngSubmit)="onSubmit(prescriptionForm)">
+  <table>
+    <tr>
+      <td>Patient Name:</td>
+      <td>
+        <select
+          name="patientName"
+          [(ngModel)]="prescription.patientName"
+          required
+        >
+          <option *ngFor="let patient of patient" [value]="patient.name" >
+            {{ patient.id }} - {{ patient.name }}
+          </option>
+        </select>
+      </td>
+    </tr>
+<tr>
+      <td>Patient Id:</td>
+      <td>
+        <select
+          name="patientId"
+          [(ngModel)]="prescription.patientId"
+          required
+        >
+          <option *ngFor="let patient of patient" [value]="patient.id" style="width: 100%;">
+            {{ patient.id }} - {{ patient.name }}
+          </option>
+        </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Doctor Name & ID:</td>
+      <td>
+        <select name="doctor" [(ngModel)]="prescription.doctorId" required style="width: 100%;">
+          <option *ngFor="let doctors of doctor" [value]="doctors.id">
+            {{ doctors.id }} {{ doctors.name }}
+          </option>
+        </select><br />
+      </td>
+    </tr>
+
+    <tr>
+      <td>Medicines:</td>
+      <td>
+        <div *ngFor="let medicine of prescription.medicines; let i = index">
+          <input
+            type="text"
+            placeholder="Name"
+            [(ngModel)]="medicine.name"
+            name="medicineName{{ i }}"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Dosage"
+            [(ngModel)]="medicine.dosage"
+            name="medicineDosage{{ i }}"
+            required
+          />
+          <input
+            type="text"
+            placeholder="Duration"
+            [(ngModel)]="medicine.duration"
+            name="medicineDuration{{ i }}"
+            required
+          />
+          <button type="button" (click)="removeMedicine(i)">Remove</button>
+        </div>
+        <button type="button" (click)="addMedicine()">Add Medicine</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Tests:</td>
+      <td>
+        <div *ngFor="let test of prescription.tests; let j = index">
+          <input
+            type="text"
+            placeholder="Test Name"
+            [(ngModel)]="test.name"
+            name="testName{{ j }}"
+          />
+          <button type="button" (click)="removeTest(j)">Remove</button>
+        </div>
+        <button type="button" (click)="addTest()">Add Test</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Advice:</td>
+      <td>
+        <textarea
+          [(ngModel)]="prescription.advice"
+          name="advice"
+          rows="3"
+        ></textarea>
+      </td>
+    </tr>
+  </table>
+  <button type="submit">Save Prescription</button>
+</form>
+
+<h3>Prescription List</h3>
+<table border="1" width="100%" style="margin-top: 20px;">
+  <thead>
+    <tr>
+      <th>Prescription ID</th>
+      <th>Patient's Name</th>
+      <th>Doctor ID</th>
+      <th>Date</th>
+      <th>Medicines</th>
+      <th>Tests</th>
+      <th>Advice</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (p of prescriptions; track p.prescriptionId) {
+      <tr>
+      <td>{{ p.prescriptionId }}</td>
+      <td>{{ p.patientName }}</td>
+
+      <td>{{ p.doctor_id}}</td>
+      <td>{{ p.prescriptionDate }}</td>
+      <td>{{ p.medicines }}</td>
+      <td>{{ p.tests }}</td>
+      <td>{{ p.advice }}</td>
+      <td>
+        <button (click)="deletePrescription(p.prescriptionId)">Delete</button>
+      </td>
+    </tr>
+  }
   </tbody>
 </table>

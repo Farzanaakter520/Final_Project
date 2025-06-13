@@ -14,14 +14,14 @@ import { NavbarComponent } from "../navbar/navbar.component";
   styleUrl: './medicine-form.component.css'
 })
 export class MedicineFormComponent implements OnInit {
-  cartServeice = inject(CartService); 
+  cartServeice = inject(CartService);
   carts: Medicine[] = [];
 
   medicines: Medicine[] = []; // Array to store books data
   medicine: Medicine = new Medicine(); // Object for form data
   isUpdate: boolean = false; // Flag to check if it’s update mode
   currentIndex: number | null = null; // To store the index of the medicine being edited
-  
+
 
   constructor(private router: Router, private medicineService: MedicineService) { }
 
@@ -47,7 +47,7 @@ export class MedicineFormComponent implements OnInit {
     } else {
       this.medicines.push(this.medicine); // Add a new medicine/book
     }
-  
+
     localStorage.setItem('medicines', JSON.stringify(this.medicines)); // Save updated list to localStorage
     //call api
     this.medicineService.addMedicine(this.medicine).subscribe((data) => {
@@ -59,7 +59,7 @@ export class MedicineFormComponent implements OnInit {
       console.log(error);
     });
   }
-  
+
   // Reset the form after submission
   resetForm(): void {
     this.medicine = new Medicine();
@@ -69,8 +69,8 @@ export class MedicineFormComponent implements OnInit {
   }
 
   // Method to handle the update action for a medicine/book
-  
-  
+
+
 
    editMedicine(medicine: Medicine, index: number): void {
     this.medicine = { ...medicine }; // Copy the medicine's data into the form
@@ -86,7 +86,7 @@ export class MedicineFormComponent implements OnInit {
       alert('Medicine deleted successfully');
     }
   }
-  
+
 
   // Method to display book details (this can be expanded as needed)
   detailsOfMedicine(medicine: Medicine): void {

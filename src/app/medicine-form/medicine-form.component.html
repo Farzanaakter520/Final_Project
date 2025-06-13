@@ -5,20 +5,20 @@
       <h1 class="form-title text-primary text-center"> Add Medicine</h1>
       <div class="container shadow-lg p-4 bg-white rounded">
         <form (ngSubmit)="onSubmit()">
-  
+
           <div class="mb-3">
             <label for="medicineName" class="form-label fw-bold"> Medicine's Name:</label>
             <input type="text" id="medicineName" [(ngModel)]="medicine.name" name="medicineName" required
               class="form-control" placeholder="Enter Medicine's name" />
           </div>
-  
+
         <div class="mb-3">
             <label class="form-label fw-bold"><i class="fas fa-graduation-cap"></i>  Category:</label>
             <input class="form-control border-primary shadow-sm rounded-pill" type="text" [(ngModel)]="medicine.category"
                 name="medicineType" required />
         </div>
-       
-  
+
+
           <div class="mb-3">
               <label for="stock" class="form-label fw-bold"> Stock:</label>
               <input type="text" id="stock" [(ngModel)]="medicine.stock" name="stock" required class="form-control"
@@ -36,20 +36,20 @@
                 <input class="form-control border-primary shadow-sm rounded-pill" type="date" [(ngModel)]="medicine.expirationDate"
                     name=" medicineExpiryDate" required />
             </div>
-  
+
           <!-- Price -->
           <div class="mb-3">
             <label for="price" class="form-label fw-bold"> Price:</label>
             <input type="number" id="price" [(ngModel)]="medicine.price" name="price" required min="1"
               class="form-control" />
           </div>
-  
+
           <div class="mb-3">
             <label for="imageUrl" class="form-label fw-bold"> Medicine Image URL:</label>
             <input type="text" id="imageUrl" [(ngModel)]="medicine.image" name="imageUrl" required class="form-control"
               placeholder="Enter image URL" />
           </div>
-  
+
           <!-- Submit Button -->
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">
@@ -59,8 +59,8 @@
         </form>
       </div>
     </div>
-  
-  
+
+
   <!-- Table Section -->
   <div class="col-md-7">
     <h3 class="form-title text-primary text-center"> List Of Medicine's</h3>
@@ -97,12 +97,12 @@
             <td>
               <button class="btn btn-outline-info btn-sm" (click)="editMedicine(medicine, i)">Edit</button>
               <button class="btn btn-outline-danger btn-sm" (click)="deleteMedicine(i)"> Delete</button>
-  
+
             </td>
           </tr>
         </tbody>
       </table>
-  
+
       <div *ngIf="medicines.length === 0" class="alert alert-warning text-center mt-3">
         <!-- 📌 No books have been added yet. Start by adding a new book! -->
       </div>

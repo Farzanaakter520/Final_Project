@@ -13,7 +13,7 @@ import { Catagory2 } from '../app.component';
   imports: [NavbarPharmacyComponent, NgFor]
 })
 export class PrescriptionMedicinesComponent implements OnInit {
-  
+
   medicines: Medicine[] = [];
   catagoryMedicines: Catagory2 [] = [];
   carts: Medicine[] = [];
@@ -21,13 +21,13 @@ export class PrescriptionMedicinesComponent implements OnInit {
 
   constructor(private medicineService: MedicineService) {
    }
-  
+
   ngOnInit(): void {
 
     this.medicineService.getMedicine().subscribe((data) => {
       this.medicines = data;
     });
-    
+
     let allMedicines = JSON.parse(localStorage.getItem('medicines') || '[]');
     this.medicines = allMedicines;
 
