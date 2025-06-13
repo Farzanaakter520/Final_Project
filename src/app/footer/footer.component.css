@@ -10,6 +10,9 @@ img{
     width: 100px;
 } */
 
+
+
+
 /* Basic footer layout */
 
 img{
@@ -23,7 +26,7 @@ footer {
     border-top: 1px solid #6e37b6;
     height: 60px;
   }
-  
+
   /* Footer content alignment */
   footer .col {
     display: flex;
@@ -31,21 +34,21 @@ footer {
     align-items: flex-start;
     margin-bottom: 20px;
   }
-  
+
   /* Table styling for the logo */
   footer table {
     width: 60%;
     border-spacing: 0;
     margin-bottom: 15px;
-    
+
   }
-  
+
   footer table td {
     padding: 5px;
     height: 50px;
-   
+
   }
-  
+
   footer h4 {
     font-size: 20px;
     font-weight: bold;
@@ -53,69 +56,68 @@ footer {
     color: #311838;
     font-style: italic;
   }
-  
+
   footer .btn {
     color: #545cd3;
     text-decoration: none;
     font-size: 14px;
     margin-bottom: 8px;
   }
-  
+
   footer .btn:hover {
     color: #007bff;
     text-decoration: underline;
   }
-  
+
   /* Styling for the social media icons */
   footer svg {
     margin-right: 10px;
     cursor: pointer;
   }
-  
+
   footer svg:hover {
     fill: #007bff;
     transform: scale(1.1);
   }
-  
+
   /* Footer social media links styling */
   footer .col ul {
     padding-left: 0;
     list-style: none;
     color: rgb(52, 40, 122);
   }
-  
+
   footer .nav-item {
     display: flex;
     align-items: center;
   }
-  
+
   footer .nav-item a {
     display: inline-block;
     padding: 5px;
     color: inherit;
   }
-  
+
   /* Responsive Design */
   @media (max-width: 768px) {
     footer .d-flex {
       flex-direction: column;
       align-items: center;
     }
-  
+
     footer .col {
       align-items: center;
       margin-bottom: 15px;
     }
-  
+
     footer .col table {
       margin-bottom: 10px;
     }
-  
+
     footer .col h4 {
       text-align: center;
     }
-    
+
   }
 
-  
-  
+
