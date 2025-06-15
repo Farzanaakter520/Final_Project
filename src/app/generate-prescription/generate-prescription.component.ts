@@ -219,10 +219,21 @@ export class GeneratePrescriptionComponent implements OnInit {
   }
 
   getAllPrescriptions() {
-    this.presService.getAllPrescriptions().subscribe((data) => {
-      this.prescriptions = data;
+    this.presService.getAllPrescriptions().subscribe((data: any[]) => {
+      this.prescriptions = data.map(item => new Prescription(
+        item.prescriptionId,
+        item.doctor?.id || 0,
+        item.doctor?.name || "",
+        item.patient?.id || 0,
+        item.patient?.name || "",
+        item.medicines || "",
+        item.tests || "",
+        item.advice || "",
+        item.prescriptionDate || ""
+      ));
     });
   }
+
 
   addMedicine() {
     this.prescription.medicines.push({ name: '', dosage: '', duration: '' });
@@ -256,17 +267,17 @@ export class GeneratePrescriptionComponent implements OnInit {
 
   onSubmit(form: any) {
     if (form.valid) {
-       let formattedPrescription = new Prescription();
+      let formattedPrescription = new Prescription();
 
-        formattedPrescription.prescriptionId = 0 // Number(this.prescription.prescriptionId);
-        formattedPrescription.doctor_id = Number(this.prescription.doctorId);
-         patient_id: Number(this.prescription.patientId),
-        // formattedPrescription.patient_id = this.prescription.patientId;
-        formattedPrescription.patientName = this.prescription.patientName;
-        formattedPrescription.medicines = this.formatMedicines(this.prescription.medicines);
-        formattedPrescription.tests = this.formatTests(this.prescription.tests);
-        formattedPrescription.advice = this.prescription.advice;
-        formattedPrescription.prescriptionDate = new Date().toISOString();
+      formattedPrescription.prescriptionId = 0 // Number(this.prescription.prescriptionId);
+      formattedPrescription.doctorId = Number(this.prescription.doctorId);
+      //  patient_id: Number(this.prescription.patientId),
+      formattedPrescription.patientId = Number(this.prescription.patientId);
+      formattedPrescription.patientName = this.prescription.patientName;
+      formattedPrescription.medicines = this.formatMedicines(this.prescription.medicines);
+      formattedPrescription.tests = this.formatTests(this.prescription.tests);
+      formattedPrescription.advice = this.prescription.advice;
+      formattedPrescription.prescriptionDate = new Date().toISOString();
 
       // const formattedPrescription = {
       //   doctor_id: Number(this.prescription.doctorId),
@@ -304,7 +315,7 @@ export class GeneratePrescriptionComponent implements OnInit {
     }
   }
 
-     deletePrescription(prescriptionId: number): void {
+  deletePrescription(prescriptionId: number): void {
     if (!prescriptionId) {
       alert('Invalid Prescription ID!');
       return;

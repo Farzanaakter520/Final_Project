@@ -113,31 +113,23 @@
     <tr>
       <td>Patient Name:</td>
       <td>
-        <select
-          name="patientName"
-          [(ngModel)]="prescription.patientName"
-          required
-        >
-          <option *ngFor="let patient of patient" [value]="patient.name" >
-            {{ patient.id }} - {{ patient.name }}
+        <select name="patientName" [(ngModel)]="prescription.patientId" required>
+          <option *ngFor="let patient of patient" [value]="patient.id">
+            {{ patient.name }}
           </option>
         </select>
       </td>
     </tr>
-<tr>
+    <!-- <tr>
       <td>Patient Id:</td>
       <td>
-        <select
-          name="patientId"
-          [(ngModel)]="prescription.patientId"
-          required
-        >
+        <select name="patientId" [(ngModel)]="prescription.patientId" required>
           <option *ngFor="let patient of patient" [value]="patient.id" style="width: 100%;">
-            {{ patient.id }} - {{ patient.name }}
+            {{ patient.id }}
           </option>
         </select>
       </td>
-    </tr>
+    </tr> -->
 
     <tr>
       <td>Doctor Name & ID:</td>
@@ -154,27 +146,10 @@
       <td>Medicines:</td>
       <td>
         <div *ngFor="let medicine of prescription.medicines; let i = index">
-          <input
-            type="text"
-            placeholder="Name"
-            [(ngModel)]="medicine.name"
-            name="medicineName{{ i }}"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Dosage"
-            [(ngModel)]="medicine.dosage"
-            name="medicineDosage{{ i }}"
-            required
-          />
-          <input
-            type="text"
-            placeholder="Duration"
-            [(ngModel)]="medicine.duration"
-            name="medicineDuration{{ i }}"
-            required
-          />
+          <input type="text" placeholder="Name" [(ngModel)]="medicine.name" name="medicineName{{ i }}" required />
+          <input type="text" placeholder="Dosage" [(ngModel)]="medicine.dosage" name="medicineDosage{{ i }}" required />
+          <input type="text" placeholder="Duration" [(ngModel)]="medicine.duration" name="medicineDuration{{ i }}"
+            required />
           <button type="button" (click)="removeMedicine(i)">Remove</button>
         </div>
         <button type="button" (click)="addMedicine()">Add Medicine</button>
@@ -184,12 +159,7 @@
       <td>Tests:</td>
       <td>
         <div *ngFor="let test of prescription.tests; let j = index">
-          <input
-            type="text"
-            placeholder="Test Name"
-            [(ngModel)]="test.name"
-            name="testName{{ j }}"
-          />
+          <input type="text" placeholder="Test Name" [(ngModel)]="test.name" name="testName{{ j }}" />
           <button type="button" (click)="removeTest(j)">Remove</button>
         </div>
         <button type="button" (click)="addTest()">Add Test</button>
@@ -198,11 +168,7 @@
     <tr>
       <td>Advice:</td>
       <td>
-        <textarea
-          [(ngModel)]="prescription.advice"
-          name="advice"
-          rows="3"
-        ></textarea>
+        <textarea [(ngModel)]="prescription.advice" name="advice" rows="3"></textarea>
       </td>
     </tr>
   </table>
@@ -215,7 +181,7 @@
     <tr>
       <th>Prescription ID</th>
       <th>Patient's Name</th>
-      <th>Doctor ID</th>
+      <th>Doctor Name</th>
       <th>Date</th>
       <th>Medicines</th>
       <th>Tests</th>
@@ -225,11 +191,10 @@
   </thead>
   <tbody>
     @for (p of prescriptions; track p.prescriptionId) {
-      <tr>
+    <tr>
       <td>{{ p.prescriptionId }}</td>
       <td>{{ p.patientName }}</td>
-
-      <td>{{ p.doctor_id}}</td>
+      <td>{{ p.doctorName}}</td>
       <td>{{ p.prescriptionDate }}</td>
       <td>{{ p.medicines }}</td>
       <td>{{ p.tests }}</td>
@@ -238,6 +203,6 @@
         <button (click)="deletePrescription(p.prescriptionId)">Delete</button>
       </td>
     </tr>
-  }
+    }
   </tbody>
 </table>
