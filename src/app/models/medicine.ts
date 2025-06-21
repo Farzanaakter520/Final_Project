@@ -20,3 +20,20 @@ export class Medicine{
     }
 
 }
+
+export interface MedicinePrescription {
+  name: string;
+  dosage: string;
+  duration: string;
+
+}
+
+export interface Prescription {
+  doctorId: number;
+  patientId: number;
+  patientName: string;
+  medicines: string;
+  tests: string;
+  advice: string;
+  prescriptionDate: string;
+}

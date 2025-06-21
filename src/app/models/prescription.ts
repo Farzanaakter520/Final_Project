@@ -1,7 +1,8 @@
 export class Prescription {
   prescriptionId: number;
-  doctor_id: number;
-  patient_id: number;
+  doctorId: number;
+  doctorName: string;
+  patientId: number;
   patientName: string;
   medicines: string;
   tests: string;
@@ -11,6 +12,7 @@ export class Prescription {
   constructor(
     prescriptionId = 0,
     doctorId = 0,
+    doctorName = "",
     patientId = 0,
     patientName = "",
     medicines = "",
@@ -19,8 +21,9 @@ export class Prescription {
     prescriptionDate = ""
   ) {
     this.prescriptionId = prescriptionId;
-    this.doctor_id = doctorId;
-    this.patient_id = patientId;
+    this.doctorId = doctorId;
+    this.doctorName = doctorName;
+    this.patientId = patientId;
     this.patientName = patientName;
     this.medicines = medicines;
     this.tests = tests;
