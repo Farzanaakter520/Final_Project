@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { User } from '../models/user';
@@ -49,6 +49,8 @@ export class UserService {
 
   private apiUrl = 'http://localhost:8081/api/users';
 
+  private getAllAppointmentByDoctorUrl = 'http://localhost:8081/api/appointments/doctorid';
+
 
   // Get all users
   getUsers(): Observable<User[]> {
@@ -61,6 +63,14 @@ export class UserService {
     console.log(userId)
     return this.http.get<any>(`${this.apiUrl}/${userId}`);
   }
+
+  getAllDoctorAppointment(): Observable<any> {
+
+    const id = Number(localStorage.getItem('id'));
+    const params = new HttpParams().set('doctorid', id.toString());
+    return this.http.get<any>(this.getAllAppointmentByDoctorUrl, { params });
+  }
+  
 
 
   // Create a new user

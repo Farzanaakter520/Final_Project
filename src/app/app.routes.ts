@@ -36,6 +36,7 @@ import { InvoiceComponent } from './invoice/invoice/invoice.component';
 import { InvoiceHistoryComponent } from './invoice/invoice-history/invoice-history.component';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { EditComponent } from './profile/edit/edit.component';
+import { AppointmentsComponent } from './doctor-dashboard/appointments/appointments.component';
 // import { DoctorComponent } from './doctor/doctor.component';
 
 
@@ -79,6 +80,7 @@ export const routes: Routes = [
    { path: 'invoice-history', component: InvoiceHistoryComponent },
    { path: 'edit', component: EditComponent },
    { path: 'changePassword', component: ChangePasswordComponent },
+   { path: 'appointmentList', component: AppointmentsComponent },
 
    { path: '', component: NavbarComponent, canActivate: [authGuard], }
 

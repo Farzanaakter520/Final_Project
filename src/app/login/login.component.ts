@@ -43,6 +43,8 @@ export class LoginComponent {
         // Set token
         this.auth.setToken(res.access_token);
         const role = this.auth.getUserRole();
+        localStorage.setItem('role', res.role);
+        localStorage.setItem('id', res.id);
 
         // Role-based navigation
         switch (role) {
